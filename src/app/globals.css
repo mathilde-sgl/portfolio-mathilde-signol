@@ -1,0 +1,253 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* globals.css */
+
+/* LAYOUT */
+body, html {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.custom-container {
+  max-width: 1200px; /* Largeur maximale pour centrer le contenu */
+  margin-left: 24px; 
+  margin-right: 24px;
+}
+
+@media (min-width: 448px) {
+  .custom-container {
+    margin-left: 40px;
+    margin-right: 40px;
+  }
+}
+
+@media (min-width: 640px) {
+  .custom-container {
+    margin-left: 80px;
+    margin-right: 80px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .custom-container {
+    margin-left: 120px;
+    margin-right: 120px;
+  }
+}
+
+@media (min-width: 1360px) {
+  .custom-container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+
+:root {
+  /* FONT */
+  --font-family: "Nunito", sans-serif;
+
+  /* COLORS */
+  /* Base colors */
+  --color-white: #ffffff;
+  --color-black: #35292b;
+  --color-white-contrast: var(--color-black);
+  --color-black-contrast: var(--color-white);
+  --color-primary: #bb1e3a;
+  --color-primary-contrast: var(--color-white);
+
+  /* Foreground colors */
+  --color-text1: #35292be0;
+  --color-text1-contrast: var(--color-white);
+  --color-text2: #35292bb8;
+  --color-text2-contrast: var(--color-white);
+  --color-text3: #35292b8f;
+  --color-text3-contrast: var(--color-white);
+  --color-divider: #35292b36;
+  --color-divider-contrast: var(--color-black);
+  --color-symbol-black: #35292b66;
+  --color-symbol-black-contrast: var(--color-black);
+  --color-symbol-primary: #de93a0;
+  --color-symbol-primary-contrast: var(--color-black);
+
+  /* Background colors */
+  --color-blur-black: #35292b7a;
+  --color-blur-primary: #bb1e3a7a;
+  --color-shadow: #35292b14;
+  --color-card: #f8f8f8;
+  --color-background: #fdfdfd;
+  --color-overlay: #fdfdfd7a;
+  --color-dialog:#fdfdfdea;
+
+  /* Palette colors */
+  /* Dark Background colors */
+  --color-dark-primary: #c7475f;
+  --color-dark-primary-contrast: var(--color-white);
+  --color-dark-info: #457b92;
+  --color-dark-info-contrast: var(--color-white);
+  --color-dark-success: #5e7d47;
+  --color-dark-success-contrast: var(--color-white);
+  --color-dark-warn: #a0681c;
+  --color-dark-warn-contrast: var(--color-white);
+  --color-dark-critical: #846b8e;
+  --color-dark-critical-contrast: var(--color-white);
+  --color-dark-neutral: #747474;
+  --color-dark-neutral-contrast: var(--color-white);
+
+ /* Dark Light colors */
+ --color-light-primary: #f0ced4;
+ --color-light-primary-contrast: #b11c38;
+ --color-light-info: #cad9e0;
+ --color-light-info-contrast: #23617c;
+ --color-light-success: #c5ddb2;
+ --color-light-success-contrast: #4a6138;
+ --color-light-warn: #f6d09b;
+ --color-light-warn-contrast: #7d5216;
+ --color-light-critical: #dbd4de;
+ --color-light-critical-contrast: #6d5079;
+ --color-light-neutral: #d6d6d6;
+ --color-light-neutral-contrast: #5b5b5b;
+
+  /* Typography */
+  --typography-text1-font-size: 20px;
+  --typography-text2-font-size: 16px;
+  --typography-text3-font-size: 12px;
+  --typography-title-n1-font-size: 5rem;
+  --typography-title-n2-font-size: 3.4rem;
+  --typography-title-n3-font-size: 2.6rem;
+  --typography-title-n4-font-size: 1.8rem;
+  --typography-title-n5-font-size: 1.5rem;
+
+  /* Radius */
+  --radius-none: 0px;
+  --radius-2xs: 4px;
+  --radius-xs: 8px;
+  --radius-sm: 12px;
+  --radius-ml: 24px;
+  --radius-xl: 40px;
+
+  /* Spacings */
+  --spacing-none: 0px;
+  --spacing-3xs: 2px;
+  --spacing-2xs: 4px;
+  --spacing-xs: 8px;
+  --spacing-sm: 12px;
+  --spacing-ml: 16px;
+  --spacing-l: 24px;
+  --spacing-xl: 32px;
+  --spacing-2xl: 40px;
+  --spacing-3xl: 80px;
+  --spacing-4xl: 120px; 
+
+  /* Dimensions */
+  --dimension-none: 0px;
+  --dimension-3xs: 2px;
+  --dimension-2xs: 4px;
+  --dimension-xs: 8px;
+  --dimension-sm: 12px;
+  --dimension-m: 16px;
+  --dimension-ml: 18px;
+  --dimension-l: 24px;
+  --dimension-xl: 32px;
+  --dimension-2xl: 40px;
+  --dimension-3xl: 80px;
+  --dimension-4xl: 120px; 
+  --dimension-5xl: 160px;
+}
+
+/* Corps de texte */
+.body {
+  font-family: var(--font-family);
+  color: var(--color-text1);
+  background-color: transparent;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Textes de base en classes */
+.text1 {
+  font-family: var(--font-family);
+  font-size: var(--typography-text1-font-size);
+  line-height: 1.5;
+  color: var(--color-text1);
+}
+
+.text1Bold {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: var(--typography-text1-font-size);
+  line-height: 1.5;
+  color: var(--color-text1);
+}
+
+.text2 {
+  font-family: var(--font-family);
+  font-size: var(--typography-text2-font-size);
+  line-height: 1.5;
+  color: var(--color-text2);
+}
+
+.text3 {
+  font-family: var(--font-family);
+  font-size: var(--typography-text3-font-size);
+  line-height: 1.5;
+  color: var(--color-text3);
+}
+
+/* Titres */
+.h1 {
+  font-family: var(--font-family);
+  font-size: var(--typography-title-n1-font-size);
+  font-weight: 500;
+  line-height: 1;
+  color: var(--color-black);
+  padding-top: 4rem;
+  padding-bottom: 1rem;
+}
+
+.h2 {
+  font-family: var(--font-family);
+  font-size: var(--typography-title-n2-font-size);
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--color-black);
+  padding-top: 3.2rem;
+  padding-bottom: 1rem;
+}
+
+.h3 {
+  font-family: var(--font-family);
+  font-size: var(--typography-title-n3-font-size);
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--color-black);
+  padding-top: 1.5rem;
+  padding-bottom: 0.75rem;
+}
+
+.h4 {
+  font-family: var(--font-family);
+  font-size: var(--typography-title-n4-font-size);
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--color-black);
+  padding-top: 0.75rem;
+  padding-bottom: 0.5rem;
+}
+
+.h5 {
+  font-family: var(--font-family);
+  font-size: var(--typography-title-n5-font-size);
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--color-black);
+  padding-top: 0.5rem;
+  padding-bottom: 0.25rem;
+}
