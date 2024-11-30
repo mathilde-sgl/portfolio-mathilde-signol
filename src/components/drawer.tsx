@@ -37,8 +37,7 @@ const Drawer: React.FC<DrawerProps> = ({
         <div
           className={`fixed top-0 right-0 h-full bg-[var(--color-dialog)] border-l border-[var(--color-divider)] transform ${
             isOpen ? "translate-x-0" : "translate-x-full"
-          } transition-transform duration-800 ease-in-out z-50 w-full sm:w-[calc(100vw*2/3)] sm:max-w-[560px]`}
-          style={{ width: "calc(100vw * 2 / 3)", maxWidth: "480px" }}
+          } transition-transform duration-800 ease-in-out z-50 w-full sm:w-[calc(100vw*2/3)] md:w-[560px]`}
         >
           {/* Header du drawer */}
           <div className="flex justify-between items-center px-8 py-4">

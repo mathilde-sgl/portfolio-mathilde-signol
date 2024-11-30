@@ -5,7 +5,7 @@ import ButtonsList from '@/components/buttons-list';
 import { useRouter } from 'next/router';
 import ProjectCard from '@/components/project-card';
 
-const logoProps = "h-auto w-[var(--dimension-5xl)] object-contain grayscale";
+const logoProps = "h-auto w-[var(--dimension-5xl)] object-contain";
 const projectProps = "h-[320px] w-[320px] sm:h-[400px] sm:w-[400px]"
 const cardProps = "flex flex-col" //bg-[var(--color-card)] rounded-[var(--radius-ml)] px-[var(--spacing-ml)] pb-[var(--spacing-ml)] sm:pt-[var(--spacing-xs)] sm:px-[var(--spacing-l)] sm:pb-[var(--spacing-l)]"
 const projectCardProps = 'flex flex-col sm:flex-row gap-x-[var(--spacing-2xl)] items-start sm:items-center pb-[var(--spacing-2xl)]'
@@ -46,7 +46,7 @@ export default function Homepage() {
         {/* SECTION 1 : Main Title */}
         <section id="title" className="space-y-[var(--spacing-sm)]">
           <h1 className="h1">UX UI Designer Senior</h1>
-          <p className="text1">depuis 6 ans, à Bordeaux</p>
+          <p className="h3">depuis 6 ans, à Bordeaux</p>
         </section>
 
         {/* SECTION 2 : Intro */}
@@ -65,9 +65,9 @@ export default function Homepage() {
           <div className='flex flex-col gap-[var(--spacing-xl)] items-end'>
             <div className="space-y-[var(--spacing-sm)]">
               <p className="text1">
-                Vous souhaitez faire une <strong>refonte UX & UI</strong> de bout en bout de votre produit ? <br />
-                Vous cherchez à créer, mettre en place ou gérer un <strong>Design System</strong> ? <br />
-                Vous voulez <strong>construire</strong> ou encore <strong>coacher</strong> votre équipe de Designers ?
+                Vous souhaitez faire une <span className="text1Bold">refonte UX & UI</span> de bout en bout de votre produit ? <br />
+                Vous cherchez à créer, mettre en place ou gérer un <span className="text1Bold">Design System</span> ? <br />
+                Vous voulez <span className="text1Bold">construire</span> ou encore <span className="text1Bold">coacher</span> votre équipe de Designers ?
               </p>
 
               <p className='h4 pt-[var(--spacing-l)]'>
@@ -96,8 +96,8 @@ export default function Homepage() {
                 Une approche centrée utilisateurs
               </span>
               <span className='text1'>
-                Placer vos <strong>utilisateurs</strong> au coeur de nos décisions, en les alignant avec vos
-                <strong> enjeux stratégiques</strong> & vos <strong>contraintes métiers</strong>.
+                Placer vos <span className="text1Bold">utilisateurs</span> au coeur de nos décisions, en les alignant avec vos
+                <span className="text1Bold"> enjeux stratégiques</span> & vos <span className="text1Bold">contraintes métiers</span>.
               </span>
             </div>
 

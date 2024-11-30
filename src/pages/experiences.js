@@ -50,7 +50,7 @@ export default function Experiences() {
           <ProjectCard
             title='Mon Compte Formation'
             id = "cpf"
-            href = "/experiences/cpf"
+            href = "/experiences/moncompteformation"
             image = "/images/project-cpf.png"
             typeText = 'Site web ・ App ・ B2C'
             badges = {[{text: "Branding"}, {text: "UX Design"}, {text: "UI Design"}, {text: "Design System"}, {text: "Product Management"},]}>

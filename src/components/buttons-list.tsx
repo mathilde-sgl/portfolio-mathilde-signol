@@ -24,7 +24,7 @@ interface ListProps {
 
 const ButtonsList: React.FC<ListProps> = ({size="medium", primaryAction, secondaryAction, tertiaryAction }) => {
   return (
-    <div className={`inline-flex items-center justify-center ${styles.gap[size]}`}>
+    <div className={`inline-flex items-center justify-center flex-wrap ${styles.gap[size]}`}>
       {tertiaryAction && (
         <TextButton
         text={tertiaryAction?.text}
