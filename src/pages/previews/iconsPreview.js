@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import Icon from '../components/icon';
+import Icon from '../../components/icon.js';
 
 const IconsPreview = () => {
     const [iconSizes, setIconSizes] = useState({});
     const [iconColors, setIconColors] = useState({});
 
     // Chargement de tous les fichiers SVG et extractions de leurs noms
-    const iconsContext = require.context('../app/icons', false, /\.svg$/);
+    const iconsContext = require.context('../../app/icons', false, /\.svg$/);
     const iconNames = iconsContext.keys().map((path) => path.replace('./', '').replace('.svg', ''));
 
     useEffect(() => {

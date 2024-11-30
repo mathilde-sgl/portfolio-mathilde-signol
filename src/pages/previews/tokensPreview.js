@@ -1,6 +1,6 @@
 // src/pages/tokens.tsx
 import React from 'react';
-import '../app/globals.css';
+import '../../app/globals.css';
 
 const TokensPreview = () => {
   // Liste des tokens que vous souhaitez afficher
