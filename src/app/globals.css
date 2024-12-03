@@ -245,7 +245,7 @@ body, html {
 .h5 {
   font-family: var(--font-family);
   font-size: var(--typography-title-n5-font-size);
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1.5;
   color: var(--color-black);
   padding-top: 0.5rem;

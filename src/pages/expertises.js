@@ -94,7 +94,7 @@ const digitalBadgesData = [
   const devToolsData = [
     { leadingIllustration: "/images/logoToolWebflow.png", text: "Webflow", size: "medium"},
     { leadingIllustration: "/images/logoToolStorybook.png", text: "Storybook", size: "medium"},
-    { leadingIllustration: "/images/logoToolAbTasty.png", text: "AB Tasty", size: "medium"},
+    { leadingIllustration: "/images/logoToolABTasty.png", text: "AB Tasty", size: "medium"},
     { leadingIllustration: "/images/logoToolGoogleAnalytics.png", text: "Google Analytics", size: "medium"},
     { leadingIllustration: "/images/logoToolVisualStudioCode.png", text: "Visual Studio Code (HTML, CSS, React, Tailwind)", size: "medium"},
   ];

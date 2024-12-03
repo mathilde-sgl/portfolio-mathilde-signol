@@ -28,7 +28,7 @@ export default function ExperienceMonCompteFormation() {
             <Badges badges = {[{text: "Branding"}, {text: "UX Design"}, {text: "UI Design"}, {text: "Design System"}, {text: "Product Management"},]}></Badges>
             <p className='text1 max-w-[720px] pb-[var(--spacing-sm)]'>
                 Refonte UX & UI de Mon Compte Formation, plateforme accompagnant les salariés à se former professionnellement.
-                Mise en place & gestion du Design System utilisé par 12 plateformes.
+                Mise en place & gestion du Design System utilisé par 12 plateformes. Construction de la cellule UX, équipe de 9 Designers.
             </p>
             <img src="/images/cpf-intro.png" alt="maquettes montrant l'interface graphique"></img>
         </section>
@@ -59,10 +59,14 @@ export default function ExperienceMonCompteFormation() {
             <img src="/images/cpf-prototype.png" alt="prototype de la recherche de formation"></img>
         </section>
 
-        <div id="main-actions" className='flex items-end justify-end pt-[var(--spacing-xl)] pb-[var(--spacing-4xl)]'>    
+        <div id="main-actions" className='flex justify-between pt-[var(--spacing-xl)] pb-[var(--spacing-4xl)]'>    
             <ButtonsList
               size="large"
-              secondaryAction={{text: "Découvrir le projet suivant", onClick: () => router.push('/experiences/acteur-bancaire'), leadingIcon: "arrow-next",}}             
+              tertiaryAction={{text: "Aller au projet précédent", onClick: () => router.push('/experiences/acteur-bancaire'), leadingIcon: "arrow-back",}}             
+            /> 
+            <ButtonsList
+              size="large"
+              secondaryAction={{text: "Découvrir le projet suivant", onClick: () => router.push('/experiences/certificateurs'), leadingIcon: "arrow-next",}}             
             />        
         </div>
       </div>

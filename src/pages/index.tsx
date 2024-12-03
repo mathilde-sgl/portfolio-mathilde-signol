@@ -2,8 +2,12 @@ import React from 'react';
 import '../app/globals.css';
 import TopBar from '../components/topBar';
 import ButtonsList from '@/components/buttons-list';
+import Icon from '@/components/icon';
 import { useRouter } from 'next/router';
 import ProjectCard from '@/components/project-card';
+import BottomBar from '@/components/bottomBar';
+import TextButton from '@/components/text-button';
+import Link from 'next/link';
 
 const logoProps = "h-auto w-[var(--dimension-5xl)] object-contain";
 const projectProps = "h-[320px] w-[320px] sm:h-[400px] sm:w-[400px]"
@@ -41,7 +45,7 @@ export default function Homepage() {
       <TopBar />
 
       {/* MAIN CONTENT */}
-      <div className="custom-container pt-[var(--spacing-2xl)] space-y-[var(--spacing-3xl)]">
+      <div className="custom-container pt-[var(--spacing-2xl)] pb-[var(--spacing-4xl)] space-y-[var(--spacing-3xl)]">
         
         {/* SECTION 1 : Main Title */}
         <section id="title" className="space-y-[var(--spacing-sm)]">
@@ -82,7 +86,7 @@ export default function Homepage() {
           <ButtonsList
             size="large"
             secondaryAction={{text: "Découvrir", onClick: () => {document.querySelector("#my-proposal")?.scrollIntoView({ behavior: "smooth"});}, leadingIcon: "arrow-down",}}            
-            tertiaryAction={{text: "Me contacter", onClick: () => alert("Action principale déclenchée !"),leadingIcon: "call",}}   
+            tertiaryAction={{text: "Me contacter", onClick: () => {document.querySelector("#footer")?.scrollIntoView({ behavior: "smooth"});},leadingIcon: "call",}}   
           />        
         </section>
 
@@ -108,7 +112,7 @@ export default function Homepage() {
               </span>
               <span className='text1'>
                 Définir une <strong>image de marque</strong> garante de la personnalité de votre produit, qui posera
-                une première brique à notre <strong>Design System</strong>.
+                une première brique à votre <strong>Design System</strong>.
               </span>
             </div>
 
@@ -214,13 +218,9 @@ export default function Homepage() {
 
         </section>
 
-        {/* Section 3 : Exemple de contenu supplémentaire */}
-        <section className="bg-[var(--color-card)] rounded-t-[var(--radius-xl)] px-[var(--spacing-3xl)] pb-[var(--spacing-2xl)]">
-          <h2 className="h2">Contactez-moi !</h2>
-          <p className="text1">J'ai hâte de discuter de ce que l'on pourrait accomplir ensemble.</p>
-        </section>
-        
       </div>
-    </div>
+      {/*BOTTOM BAR*/}  
+      <section id="footer"><BottomBar></BottomBar></section>
+  </div>
   );
 }

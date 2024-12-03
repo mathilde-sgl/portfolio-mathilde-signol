@@ -53,10 +53,14 @@ export default function ExperienceActeurBancaire() {
             <img src="/images/acteurbancaire-maquettes3.png" alt="maquettes affichant le cockpit d'un produit"></img>
         </section>
 
-        <div id="main-actions" className='flex items-end justify-end pt-[var(--spacing-xl)] pb-[var(--spacing-4xl)]'>    
+        <div id="main-actions" className='flex items-end justify-between pt-[var(--spacing-xl)] pb-[var(--spacing-4xl)]'> 
             <ButtonsList
               size="large"
-              secondaryAction={{text: "Découvrir le projet suivant", onClick: () => router.push('/experiences/acteur-bancaire'), leadingIcon: "arrow-next",}}             
+              tertiaryAction={{text: "Aller au projet précédent", onClick: () => router.push('/experiences/mesr'), leadingIcon: "arrow-back",}}             
+            />    
+            <ButtonsList
+              size="large"
+              secondaryAction={{text: "Découvrir le projet suivant", onClick: () => router.push('/experiences/moncompteformation'), leadingIcon: "arrow-next",}}             
             />        
         </div>
       </div>

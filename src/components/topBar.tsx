@@ -12,7 +12,7 @@ export const TopBar = () => {
         { label: "Mes expertises", href: "/expertises", leadingIcon: "competencies", trailingIcon: "arrow-next"},
         { label: "Mes expériences", href: "/experiences", leadingIcon: "experiences", trailingIcon: "arrow-next"},
         { label: "Mes formations", href: "/formations", leadingIcon: "degrees", trailingIcon: "arrow-next"},
-        { label: "Contactez-moi !", href: "/contact", leadingIcon: "call", trailingIcon: "arrow-next"},
+        { label: "Contactez-moi !", href: "/#footer", leadingIcon: "call", trailingIcon: "arrow-next"},
       ];
 
     return (
