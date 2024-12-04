@@ -1,13 +1,10 @@
 import React from 'react';
 import '../app/globals.css';
 import TopBar from '../components/topBar';
-import ButtonsList from '@/components/buttons-list';
-import TextButton from '../components/text-button';
+import BottomBar from '../components/bottomBar';
 import { useRouter } from 'next/router';
 
-const logoProps = "h-auto w-[var(--dimension-5xl)] object-contain grayscale";
 const projectProps = "h-[80px] w-[80px]"
-const cardProps = "flex flex-col bg-[var(--color-card)] rounded-[var(--radius-ml)] pt-[var(--spacing-xs)] px-[var(--spacing-l)] pb-[var(--spacing-l)]"
 const projectCardProps = 'flex flex-col items-start gap-[var(--spacing-sm)]'
 
 export default function Experiences() {
@@ -19,10 +16,10 @@ export default function Experiences() {
       <TopBar />
 
       {/* MAIN CONTENT */}
-      <div className="custom-container pt-[var(--spacing-2xl)] space-y-[var(--spacing-3xl)]">
+      <div className="custom-container pt-[var(--spacing-xl)] space-y-[var(--spacing-3xl)]">
         
         {/* TITLE */}
-        <section id="title"><h1 className="h2">Mes formations</h1></section>
+        <section id="title"><h1 className="h1">Mes formations</h1></section>
 
         {/* LIST */}
         <section className="w-full max-w-[1200px] space-y-[var(--spacing-2xl)] pb-[var(--spacing-4xl)]">
@@ -75,6 +72,7 @@ export default function Experiences() {
         </section>
         
       </div>
+      <BottomBar></BottomBar>
     </div>
   );
 }

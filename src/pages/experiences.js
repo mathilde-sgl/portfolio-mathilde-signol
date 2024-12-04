@@ -2,12 +2,9 @@ import React from 'react';
 import '../app/globals.css';
 import TopBar from '../components/topBar';
 import { useRouter } from 'next/router';
-import ProjectCard from '../components/project-card'
+import ProjectCard from '../components/project-card';
+import BottomBar from '../components/bottomBar';
 
-const logoProps = "h-auto w-[var(--dimension-5xl)] object-contain grayscale";
-const projectProps = "h-[400px] w-[400px]"
-const cardProps = "flex flex-col bg-[var(--color-card)] rounded-[var(--radius-ml)] pt-[var(--spacing-xs)] px-[var(--spacing-l)] pb-[var(--spacing-l)]"
-const projectCardProps = 'flex flex-col items-start gap-[var(--spacing-ml)]'
 
 export default function Experiences() {
   const router = useRouter();
@@ -21,7 +18,7 @@ export default function Experiences() {
       <div className="custom-container pt-[var(--spacing-2xl)] space-y-[var(--spacing-3xl)]">
         
         {/* TITLE */}
-        <section id="title"><h1 className="h2">Mes expériences</h1></section>
+        <section id="title"><h1 className="h1">Mes expériences</h1></section>
 
         {/* LIST */}
         <section className="w-full max-w-[1200px] space-y-[var(--spacing-3xl)] pb-[var(--spacing-4xl)]">
@@ -60,41 +57,44 @@ export default function Experiences() {
           <ProjectCard
             title='Certificateurs'
             id = "certificateurs"
+            href = "/experiences/certificateurs"
             image = "/images/project-certificateurs.png"
             typeText = 'SaaS ・ B2B'
             badges = {[{text: "Branding"}, {text: "UX Design"}, {text: "UI Design"}]}>
           </ProjectCard>
 
           {/* Projet Soltea */}
-          <ProjectCard
+          {/* <ProjectCard
             title='Soltéa'
             id = "soltea"
             image = "/images/project-soltea.png"
             typeText = 'SaaS ・ B2B'
             badges = {[{text: "Branding"}, {text: "UX Design"}]}>
-          </ProjectCard>
+          </ProjectCard> */}
 
           {/* Projet Imagine */}
           <ProjectCard
             title='Imagine'
             id = "imagine"
+            href = "/experiences/imagine"
             image = "/images/project-imagine.png"
             typeText = 'Agence de Design'
             badges = {[{text: "Lead"}, {text: "Branding"}, {text: "Graphisme"}]}>
           </ProjectCard>
 
           {/* Projet mc2i */}
-          <ProjectCard
+          {/* <ProjectCard
             title='mc2i'
             id = "mc2i"
             image = "/images/project-mc2i.png"
             typeText = 'Cabinet de conseil'
             badges = {[{text: "Branding"}, {text: "Communication"}, {text: "Graphisme"}]}>
-          </ProjectCard>
+          </ProjectCard> */}
 
         </section>
         
       </div>
+      <BottomBar></BottomBar>
     </div>
   );
 }

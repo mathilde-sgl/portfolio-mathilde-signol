@@ -5,6 +5,7 @@ import Badges from '../components/badge';
 import IllustrationTexts from '../components/illustration-text';
 import { useRouter } from 'next/router';
 import Icon from '../components/icon';
+import BottomBar from '../components/bottomBar';
 
 const cardProps = "flex flex-col" //bg-[var(--color-card)] rounded-[var(--radius-ml)] px-[var(--spacing-ml)] pb-[var(--spacing-ml)] sm:pt-[var(--spacing-xs)] sm:px-[var(--spacing-l)] sm:pb-[var(--spacing-l)] h-full"
 
@@ -111,7 +112,7 @@ export default function Experiences() {
       <div className="custom-container pt-[var(--spacing-xl)]">
         
         {/* TITLE */}
-        <section id="title"><h1 className="h2">Mes expertises</h1></section>
+        <section id="title"><h1 className="h1">Mes expertises</h1></section>
 
         {/* SECTION 1 : MES COMPÉTENCES */}
         <section id= "compétences" className="w-full max-w-[1200px] pb-[var(--spacing-4xl)]">
@@ -221,6 +222,7 @@ export default function Experiences() {
         </section>
 
       </div>
+      <BottomBar></BottomBar>
     </div>
   );
 }

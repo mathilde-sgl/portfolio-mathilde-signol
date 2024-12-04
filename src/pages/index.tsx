@@ -2,39 +2,12 @@ import React from 'react';
 import '../app/globals.css';
 import TopBar from '../components/topBar';
 import ButtonsList from '@/components/buttons-list';
-import Icon from '@/components/icon';
 import { useRouter } from 'next/router';
 import ProjectCard from '@/components/project-card';
 import BottomBar from '@/components/bottomBar';
-import TextButton from '@/components/text-button';
-import Link from 'next/link';
 
 const logoProps = "h-auto w-[var(--dimension-5xl)] object-contain";
-const projectProps = "h-[320px] w-[320px] sm:h-[400px] sm:w-[400px]"
 const cardProps = "flex flex-col" //bg-[var(--color-card)] rounded-[var(--radius-ml)] px-[var(--spacing-ml)] pb-[var(--spacing-ml)] sm:pt-[var(--spacing-xs)] sm:px-[var(--spacing-l)] sm:pb-[var(--spacing-l)]"
-const projectCardProps = 'flex flex-col sm:flex-row gap-x-[var(--spacing-2xl)] items-start sm:items-center pb-[var(--spacing-2xl)]'
-
-const mesrBadges = [
-  { text: "UX Design", size: "large",},
-  { text: "UI Design", size: "large",},
-  { text: "Design System", size: "large",},
-];
-
-const acteurBancaireBadges = [
-  { text: "Lead", size: "large",},
-  { text: "Branding", size: "large",},
-  { text: "UX Design", size: "large",},
-  { text: "UI Design", size: "large",},
-  { text: "Design System", size: "large",},
-]
-
-const cpfBadges = [
-  { text: "Lead", size: "large",},
-  { text: "Branding", size: "large",},
-  { text: "UX Design", size: "large",},
-  { text: "UI Design", size: "large",},
-  { text: "Design System", size: "large",},
-]
 
 export default function Homepage() {
   const router = useRouter();
@@ -49,8 +22,8 @@ export default function Homepage() {
         
         {/* SECTION 1 : Main Title */}
         <section id="title" className="space-y-[var(--spacing-sm)]">
-          <h1 className="h1">UX UI Designer Senior</h1>
-          <p className="h3">depuis 6 ans, à Bordeaux</p>
+          <h1 className="h1 !pb-[var(--spacing-none)]">UX UI Designer Senior</h1>
+          <p className="h4 !pt-[var(--spacing-sm)] !text-[var(--color-text2)]">depuis 6 ans, à Bordeaux</p>
         </section>
 
         {/* SECTION 2 : Intro */}
@@ -74,7 +47,7 @@ export default function Homepage() {
                 Vous voulez <span className="text1Bold">construire</span> ou encore <span className="text1Bold">coacher</span> votre équipe de Designers ?
               </p>
 
-              <p className='h4 pt-[var(--spacing-l)]'>
+              <p className='h3 pt-[var(--spacing-l)]'>
                 Je vous accompagne !
               </p>
             </div>
@@ -100,7 +73,7 @@ export default function Homepage() {
                 Une approche centrée utilisateurs
               </span>
               <span className='text1'>
-                Placer vos <span className="text1Bold">utilisateurs</span> au coeur de nos décisions, en les alignant avec vos
+                Placer vos <span className="text1Bold">utilisateurs</span> au coeur de nos décisions, en prenant compte de vos
                 <span className="text1Bold"> enjeux stratégiques</span> & vos <span className="text1Bold">contraintes métiers</span>.
               </span>
             </div>
@@ -173,6 +146,12 @@ export default function Homepage() {
             <img src="/images/logo-klm.png" alt="KLM" className={logoProps}/>
             <img src="/images/logo-airbus.png" alt="Airbus" className={logoProps}/>
           </div>
+          <div className='flex items-end justify-end'>    
+            <ButtonsList
+              size="large"
+              secondaryAction={{text: "Me contacter", onClick: () => {document.querySelector("#footer")?.scrollIntoView({ behavior: "smooth"});}, leadingIcon: "arrow-down",}}             
+            />        
+         </div>
         </section>
 
         {/* SECTION 6 : Last Projects */}
@@ -209,7 +188,7 @@ export default function Homepage() {
             badges = {[{text: "Branding"}, {text: "UX Design"}, {text: "UI Design"}, {text: "Design System"}, {text: "Product Management"},]}>
           </ProjectCard>
 
-          <div id="main-actions" className='flex items-end justify-end'>    
+          <div className='flex items-end justify-end'>    
             <ButtonsList
               size="large"
               secondaryAction={{text: "Voir plus de projets", onClick: () => router.push('/experiences'), leadingIcon: "arrow-next",}}             

@@ -3,6 +3,7 @@ import TopBar from '@/components/topBar';
 import { useRouter } from 'next/router';
 import Badges from '@/components/badge';
 import ButtonsList from '@/components/buttons-list';
+import BottomBar from '@/components/bottomBar';
 
 const sectionProps = "w-full space-y-[var(--spacing-ml)] pb-[var(--spacing-xl)] sm:pb-[var(--spacing-2xl)]"
 
@@ -32,6 +33,20 @@ export default function ExperienceMesr() {
             <img src="/images/mesr-intro.png" alt="maquettes montrant l'interface graphique"></img>
         </section>
 
+        {/* PRÉSENTATION */}
+        <section id="presentation" className={sectionProps}>
+            <h2 className='h3 !text-[var(--color-symbol-primary)]'>Contexte</h2>
+            <p className='text1 max-w-[720px] pb-[var(--spacing-sm)]'>
+            Le ministère de l'éducation supérieure et la recherche souhaite innover dans l'approche des formations &
+            la valorisation des compétences des étudiants.
+            </p>
+            <h2 className='h3 !text-[var(--color-symbol-primary)]'>Enjeux</h2>
+            <p className='text1 max-w-[720px] pb-[var(--spacing-sm)]'>
+            Créer une plateforme simple et intuitive qui répond aux besoins des universités, en
+            prenant en compte la diversité des formations & la complexité des processus.
+            </p>
+        </section>
+
         {/* CHARTE GRAPHIQUE */}
         <section id="charte-graphique" className={sectionProps}>
             <h2 className='h2'>Charte Graphique</h2>
@@ -53,10 +68,12 @@ export default function ExperienceMesr() {
         <div id="main-actions" className='flex items-end justify-end pt-[var(--spacing-xl)] pb-[var(--spacing-4xl)]'>    
             <ButtonsList
               size="large"
-              secondaryAction={{text: "Découvrir le projet suivant", onClick: () => router.push('/experiences/acteur-bancaire'), leadingIcon: "arrow-next",}}             
+              secondaryAction={{text: "Projet suivant", onClick: () => router.push('/experiences/acteur-bancaire'), leadingIcon: "arrow-next",}}             
             />        
         </div>
       </div>
+      <BottomBar></BottomBar>
     </div>
+    
   );
 }

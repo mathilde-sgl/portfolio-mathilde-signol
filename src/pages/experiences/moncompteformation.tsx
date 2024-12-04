@@ -3,6 +3,7 @@ import TopBar from '@/components/topBar';
 import { useRouter } from 'next/router';
 import Badges from '@/components/badge';
 import ButtonsList from '@/components/buttons-list';
+import BottomBar from '@/components/bottomBar';
 
 const sectionProps = "w-full space-y-[var(--spacing-ml)] pb-[var(--spacing-xl)] sm:pb-[var(--spacing-2xl)]"
 
@@ -28,9 +29,24 @@ export default function ExperienceMonCompteFormation() {
             <Badges badges = {[{text: "Branding"}, {text: "UX Design"}, {text: "UI Design"}, {text: "Design System"}, {text: "Product Management"},]}></Badges>
             <p className='text1 max-w-[720px] pb-[var(--spacing-sm)]'>
                 Refonte UX & UI de Mon Compte Formation, plateforme accompagnant les salariés à se former professionnellement.
-                Mise en place & gestion du Design System utilisé par 12 plateformes. Construction de la cellule UX, équipe de 9 Designers.
             </p>
             <img src="/images/cpf-intro.png" alt="maquettes montrant l'interface graphique"></img>
+        </section>
+
+        {/* PRÉSENTATION */}
+        <section id="presentation" className={sectionProps}>
+            <h2 className='h3 !text-[var(--color-symbol-primary)]'>Contexte</h2>
+            <p className='text1 max-w-[720px] pb-[var(--spacing-sm)]'>
+            Mon Compte Formation est un projet sociétal qui a pris une nouvelle dimension suite à la crise du 
+            Covid-19, qui a amené un grand nombre de salariés français à se former pour se réorienter.
+            </p>
+            <h2 className='h3 !text-[var(--color-symbol-primary)]'>Enjeux</h2>
+            <p className='text1 max-w-[720px] pb-[var(--spacing-sm)] flex flex-col gap-[var(--spacing-xs)]'>
+              <span> → Refondre l'UX & l'UI afin d'inclure de nouvelles fonctionnalités
+                        et de respecter les normes d'accessibilité. </span>
+              <span> → Mettre en place un Design System multi-produits (12) & multi-marques (2). </span>
+              <span> → Construire & organiser la cellule UX, équipe de 9 Designers. </span>
+            </p>
         </section>
 
         {/* DESIGN SYSTEM */}
@@ -43,6 +59,12 @@ export default function ExperienceMonCompteFormation() {
         <section id="illustrations" className={sectionProps}>
             <h2 className='h2'>Illustrations</h2>
             <img src="/images/cpf-illustrations.png" alt="illustrations réalisées"></img>
+        </section>
+
+        {/* VISUELS */}
+        <section id="visuels" className={sectionProps}>
+            <h2 className='h2'>Visuels</h2>
+            <img src="/images/cpf-visuels.png" alt="visuels réalisés à partir de photos retravaillées"></img>
         </section>
 
         {/* MAQUETTES */}
@@ -59,17 +81,18 @@ export default function ExperienceMonCompteFormation() {
             <img src="/images/cpf-prototype.png" alt="prototype de la recherche de formation"></img>
         </section>
 
-        <div id="main-actions" className='flex justify-between pt-[var(--spacing-xl)] pb-[var(--spacing-4xl)]'>    
+        <div id="main-actions" className='flex flex-col-reverse gap-[var(--spacing-ml)] sm:flex-row justify-between pt-[var(--spacing-xl)] pb-[var(--spacing-4xl)]'>
             <ButtonsList
               size="large"
-              tertiaryAction={{text: "Aller au projet précédent", onClick: () => router.push('/experiences/acteur-bancaire'), leadingIcon: "arrow-back",}}             
+              tertiaryAction={{text: "Projet précédent", onClick: () => router.push('/experiences/acteur-bancaire'), leadingIcon: "arrow-back",}}             
             /> 
             <ButtonsList
               size="large"
-              secondaryAction={{text: "Découvrir le projet suivant", onClick: () => router.push('/experiences/certificateurs'), leadingIcon: "arrow-next",}}             
+              secondaryAction={{text: "Projet suivant", onClick: () => router.push('/experiences/certificateurs'), leadingIcon: "arrow-next",}}             
             />        
         </div>
       </div>
+      <BottomBar></BottomBar>
     </div>
   );
 }

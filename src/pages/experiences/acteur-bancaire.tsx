@@ -3,6 +3,7 @@ import TopBar from '@/components/topBar';
 import { useRouter } from 'next/router';
 import Badges from '@/components/badge';
 import ButtonsList from '@/components/buttons-list';
+import BottomBar from '@/components/bottomBar';
 
 const sectionProps = "w-full space-y-[var(--spacing-ml)] pb-[var(--spacing-xl)] sm:pb-[var(--spacing-2xl)]"
 
@@ -33,6 +34,22 @@ export default function ExperienceActeurBancaire() {
             <img src="/images/acteurbancaire-intro.png" alt="maquettes montrant l'interface graphique"></img>
         </section>
 
+        {/* PRÉSENTATION */}
+        <section id="presentation" className={sectionProps}>
+            <h2 className='h3 !text-[var(--color-symbol-primary)]'>Contexte</h2>
+            <p className='text1 max-w-[720px] pb-[var(--spacing-sm)]'>
+            Initialement créée pour des profils IT, l'équipe Marketplace a pour ambition de gérer 
+            LA plateforme qui sera le compagnon quotidien des collaborateurs.
+            </p>
+            <h2 className='h3 !text-[var(--color-symbol-primary)]'>Enjeux</h2>
+            <p className='text1 max-w-[720px] pb-[var(--spacing-sm)] flex flex-col gap-[var(--spacing-xs)]'>
+              <span> → Définir une identité forte pour appuyer son rayonnement interne. </span>
+              <span> → Refondre l'UX & l'UI afin d'inclure la diversité des collaborateurs 
+              et de proposer des produits variées et complexes. </span>
+              <span> → Organiser l'équipe en mettant en place un Design System. </span>
+            </p>
+        </section>
+
         {/* LOGOS */}
         <section id="logos" className={sectionProps}>
             <h2 className='h2'>Logos</h2>
@@ -53,17 +70,18 @@ export default function ExperienceActeurBancaire() {
             <img src="/images/acteurbancaire-maquettes3.png" alt="maquettes affichant le cockpit d'un produit"></img>
         </section>
 
-        <div id="main-actions" className='flex items-end justify-between pt-[var(--spacing-xl)] pb-[var(--spacing-4xl)]'> 
+        <div id="main-actions" className='flex flex-col-reverse gap-[var(--spacing-ml)] sm:flex-row justify-between pt-[var(--spacing-xl)] pb-[var(--spacing-4xl)]'>
             <ButtonsList
               size="large"
-              tertiaryAction={{text: "Aller au projet précédent", onClick: () => router.push('/experiences/mesr'), leadingIcon: "arrow-back",}}             
-            />    
+              tertiaryAction={{text: "Projet précédent", onClick: () => router.push('/experiences/mesr'), leadingIcon: "arrow-back",}}             
+            /> 
             <ButtonsList
               size="large"
-              secondaryAction={{text: "Découvrir le projet suivant", onClick: () => router.push('/experiences/moncompteformation'), leadingIcon: "arrow-next",}}             
+              secondaryAction={{text: "Projet suivant", onClick: () => router.push('/experiences/moncompteformation'), leadingIcon: "arrow-next",}}             
             />        
         </div>
       </div>
+      <BottomBar></BottomBar>
     </div>
   );
 }

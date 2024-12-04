@@ -210,6 +210,8 @@ body, html {
   color: var(--color-black);
   padding-top: 4rem;
   padding-bottom: 1rem;
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 
 .h2 {
