@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export const BottomBar = () => {
     return (
-        <footer className="flex flex-col bg-[var(--color-card)] w-full items-center justify-between px-6 pt-10 pb-8 md:px-8 gap-[var(--spacing-2xl)]">
+        <footer id="footer" className="flex flex-col bg-[var(--color-card)] w-full items-center justify-between px-6 pt-10 pb-8 md:px-8 gap-[var(--spacing-2xl)]">
 
             <div className="flex flex-col items-center gap-[var(--spacing-sm)]">
                 <h5 className='text2 uppercase'>Contactez-moi</h5>
