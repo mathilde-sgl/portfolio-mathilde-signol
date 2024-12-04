@@ -25,7 +25,7 @@ export default function Experiences() {
       <div className="custom-container pt-[var(--spacing-xl)] space-y-[var(--spacing-3xl)]">
         
         {/* TITLE */}
-        <section id="title"><h1 className="h1">Mes formations</h1></section>
+        <section id="title"><h1 className="h1 w-full">Mes formations</h1></section>
 
         {/* LIST */}
         <section className="w-full max-w-[1200px] space-y-[var(--spacing-2xl)] pb-[var(--spacing-4xl)]">

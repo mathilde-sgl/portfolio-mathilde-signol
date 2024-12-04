@@ -4,13 +4,15 @@ import TopBar from '../components/topBar';
 import Badges from '../components/badge';
 import IllustrationTexts from '../components/illustration-text';
 import { useRouter } from 'next/router';
-import Icon from '../components/icon';
 import BottomBar from '../components/bottomBar';
 import Head from 'next/head';
 
 const cardProps = "flex flex-col" //bg-[var(--color-card)] rounded-[var(--radius-ml)] px-[var(--spacing-ml)] pb-[var(--spacing-ml)] sm:pt-[var(--spacing-xs)] sm:px-[var(--spacing-l)] sm:pb-[var(--spacing-l)] h-full"
 
 const digitalBadgesData = [
+    { text: "Product Management", size: "medium",}, 
+    { text: "Analytique & Data", size: "medium",},
+    { text: "Dev", size: "medium",},
     { text: "Web", size: "medium",},
     { text: "App", size: "medium",},
     { text: "SaaS", size: "medium",},
@@ -24,26 +26,24 @@ const digitalBadgesData = [
     { text: "UI Design", size: "medium",},
     { text: "Design Thinking", size: "medium",},
     { text: "Design System", size: "medium",},
-    { text: "Product Management", size: "medium",},
     { text: "Direction Artistique", size: "medium",},
     { text: "Branding", size: "medium",},
     { text: "Graphisme", size: "medium",},
     { text: "Accessibilité numérique", size: "medium",},
-    { text: "Analytique & Data", size: "medium",},
     { text: "Facilitation graphique", size: "medium",},
   ];
 
   const managementBadgesData = [
     { text: "Lead", size: "medium",},
-    { text: "Com", size: "medium",},
+    { text: "Communication", size: "medium",},
     { text: "Travail en équipe", size: "medium",},
     { text: "Coaching", size: "medium",},
     { text: "Construction d'équipe", size: "medium",},
     { text: "Gestion de crise", size: "medium",},
-    { text: "Relation client", size: "medium",},
   ];
 
   const projectBadgesData = [
+    { text: "Frameworks agiles", size: "medium",},
     { text: "Scrum", size: "medium",},
     { text: "Kanban", size: "medium",},
     { text: "SAFe", size: "medium",},
@@ -98,7 +98,7 @@ const digitalBadgesData = [
     { leadingIllustration: "/images/logoToolStorybook.png", text: "Storybook", size: "medium"},
     { leadingIllustration: "/images/logoToolABTasty.png", text: "AB Tasty", size: "medium"},
     { leadingIllustration: "/images/logoToolGoogleAnalytics.png", text: "Google Analytics", size: "medium"},
-    { leadingIllustration: "/images/logoToolVisualStudioCode.png", text: "Visual Studio Code (HTML, CSS, React, Tailwind)", size: "medium"},
+    { leadingIllustration: "/images/logoToolVisualStudioCode.png", text: "Visual Studio Code*", size: "medium"},
   ];
 
 export default function Experiences() {
@@ -114,25 +114,24 @@ export default function Experiences() {
       <TopBar />
 
       {/* MAIN CONTENT */}
-      <div className="custom-container pt-[var(--spacing-xl)]">
+      <div className="custom-container pt-[var(--spacing-xl)] space-y-[var(--spacing-l)]">
         
         {/* TITLE */}
         <section id="title"><h1 className="h1">Mes expertises</h1></section>
 
         {/* SECTION 1 : MES COMPÉTENCES */}
-        <section id= "compétences" className="w-full max-w-[1200px] pb-[var(--spacing-4xl)]">
+        <section id= "compétences">
             <div className='flex flex-row items-center gap-[var(--spacing-l)]'>
-                <Icon name="competencies" size="var(--dimension-2xl)"></Icon>
-                <h2 className="h3">Mes compétences</h2>
+                {/* <Icon name="competencies" size="var(--dimension-2xl)"></Icon>*/}
+                <h2 className="h2 !text-[--color-primary]">Mes compétences</h2>
             </div>
-            
 
-            <div className='grid grid-cols-1 sm:grid-cols-1 items-start gap-[var(--spacing-2xl)]'>
+            <div className='grid grid-cols-1 md:grid-cols-4 items-start gap-[var(--spacing-2xl)]'>
 
                 {/* PRODUCT & DESIGN */}
                 <div id='product&design' className={cardProps}>
                     <div className={cardProps}>
-                    <h3 className='h4'>Design & Produit</h3>
+                    <h3 className='h4'>Design</h3>
                     <Badges badges={productBadgesData} />
                     </div>
                 </div>
@@ -148,7 +147,7 @@ export default function Experiences() {
                 {/* DIGITAL */}
                 <div id='digital' className={cardProps}>
                     <div className={cardProps}>
-                    <h3 className='h4'>Digital</h3>
+                    <h3 className='h4'>Produit</h3>
                     <Badges badges={digitalBadgesData} />
                     </div>
                 </div>
@@ -156,7 +155,7 @@ export default function Experiences() {
                 {/* GESTION DE PROJET */}
                 <div id='projectmanagement' className={cardProps}>
                     <div className={cardProps}>
-                    <h3 className='h4'>Gestion de projets</h3>
+                    <h3 className='h4'>Projet</h3>
                     <Badges badges={projectBadgesData} />
                     </div>
                 </div>
@@ -170,24 +169,24 @@ export default function Experiences() {
                 </div>*/}
 
                 {/* BUSINESS & MANAGEMENT */}
-                <div id='langage' className={cardProps}>
+                {/*<div id='langage' className={cardProps}>
                     <div className={cardProps}>
                     <h3 className='h4'>Langues</h3>
                     <Badges badges={langageBadgesData} />
                     </div>
-                </div>
+                </div>*/}
             </div>
 
         </section>
 
         {/* SECTION 2 : MES OUTILS */}
-        <section id= "outils" className="w-full max-w-[1200px] pb-[var(--spacing-4xl)]">
-            <div className='flex flex-row items-center gap-[var(--spacing-l)]'>
-                <Icon name="tools" size="var(--dimension-2xl)"></Icon>
-                <h2 className="h3">Mes outils</h2>
+        <section id= "outils" className='pb-[var(--spacing-4xl)]'>
+            <div className='flex flex-row items-center gap-[var(--spacing-l)] '>
+                {/*<Icon name="tools" size="var(--dimension-2xl)"></Icon>*/}
+                <h2 className="h2 !text-[--color-primary]">Mes outils</h2>
             </div>
 
-            <div className='grid grid-cols-1 sm:grid-cols-1 items-start gap-[var(--spacing-2xl)]'>
+            <div className='grid grid-cols-1 md:grid-cols-4 items-start gap-[var(--spacing-2xl)]'>
 
                 {/* PRODUCT & DESIGN */}
                 <div id='product&design' className={cardProps}>
@@ -218,9 +217,9 @@ export default function Experiences() {
                     <div className={cardProps}>
                     <h3 className='h4'>Dev & Data</h3>
                     <IllustrationTexts illustrationTexts={devToolsData} />
+                    <span className='text2 pt-[var(--spacing-ml)]'>*HTML, CSS, React, Tailwind</span>
                     </div>
                 </div>
-
             
             </div>
 
