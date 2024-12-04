@@ -3,6 +3,7 @@ import '../app/globals.css';
 import TopBar from '../components/topBar';
 import BottomBar from '../components/bottomBar';
 import { useRouter } from 'next/router';
+import Head from 'next/head';
 
 const projectProps = "h-[80px] w-[80px]"
 const projectCardProps = 'flex flex-col items-start gap-[var(--spacing-sm)]'
@@ -12,6 +13,11 @@ export default function Experiences() {
 
   return (
     <div className="flex flex-col bg-[var(--color-background)]">
+      <Head>
+        <link rel="icon" type="image/x-icon" href="/images/favicon.ico"/>
+        <title> Formations - Mathilde Signol </title>
+      </Head>
+
       {/* TOP BAR */}
       <TopBar />
 

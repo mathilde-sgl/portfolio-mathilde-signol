@@ -4,13 +4,18 @@ import TopBar from '../components/topBar';
 import { useRouter } from 'next/router';
 import ProjectCard from '../components/project-card';
 import BottomBar from '../components/bottomBar';
-
+import Head from 'next/head';
 
 export default function Experiences() {
   const router = useRouter();
 
   return (
     <div className="flex flex-col bg-[var(--color-background)]">
+      <Head>
+        <link rel="icon" type="image/x-icon" href="/images/favicon.ico"/>
+        <title> Expériences - Mathilde Signol </title>
+      </Head>
+      
       {/* TOP BAR */}
       <TopBar />
 

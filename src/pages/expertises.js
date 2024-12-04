@@ -6,6 +6,7 @@ import IllustrationTexts from '../components/illustration-text';
 import { useRouter } from 'next/router';
 import Icon from '../components/icon';
 import BottomBar from '../components/bottomBar';
+import Head from 'next/head';
 
 const cardProps = "flex flex-col" //bg-[var(--color-card)] rounded-[var(--radius-ml)] px-[var(--spacing-ml)] pb-[var(--spacing-ml)] sm:pt-[var(--spacing-xs)] sm:px-[var(--spacing-l)] sm:pb-[var(--spacing-l)] h-full"
 
@@ -105,6 +106,10 @@ export default function Experiences() {
 
   return (
     <div className="flex flex-col bg-[var(--color-background)]">
+      <Head>
+        <link rel="icon" type="image/x-icon" href="/images/favicon.ico"/>
+        <title> Expertises - Mathilde Signol </title>
+      </Head>
       {/* TOP BAR */}
       <TopBar />
 

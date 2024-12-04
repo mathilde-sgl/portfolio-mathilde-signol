@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 import Badges from '@/components/badge';
 import ButtonsList from '@/components/buttons-list';
 import BottomBar from '@/components/bottomBar';
+import Head from 'next/head';
 
 const sectionProps = "w-full space-y-[var(--spacing-ml)] pb-[var(--spacing-xl)] sm:pb-[var(--spacing-2xl)]"
 
@@ -12,6 +13,11 @@ export default function ExperienceActeurBancaire() {
 
   return (
     <div className="flex flex-col bg-[var(--color-background)]">
+      <Head>
+        <link rel="icon" type="image/x-icon" href="/images/favicon.ico"/>
+        <title> Marketplace - Mathilde Signol </title>
+      </Head>
+
       {/* TOP BAR */}
       <TopBar />
 

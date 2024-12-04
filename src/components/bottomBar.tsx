@@ -1,12 +1,9 @@
-import React, { useState } from 'react';
 import '../app/globals.css';
-import Button from './text-button';
 import Link from 'next/link';
-import Icon from './icon';
 
 export const BottomBar = () => {
     return (
-        <footer className="flex flex-col bg-[var(--color-card)] w-full items-center justify-between px-6 py-8 md:px-8 gap-[var(--spacing-2xl)]">
+        <footer className="flex flex-col bg-[var(--color-card)] w-full items-center justify-between px-6 pt-10 pb-8 md:px-8 gap-[var(--spacing-2xl)]">
 
             <div className="flex flex-col items-center gap-[var(--spacing-sm)]">
                 <h5 className='text2 uppercase'>Contactez-moi</h5>
@@ -52,7 +49,6 @@ export const BottomBar = () => {
             </div>
 
             <p className='text2 text-center'>© 2024 - Mathilde Signol - UX UI Designer Senior - Tous droits réservés.</p>
-            
 
         </footer>
     );

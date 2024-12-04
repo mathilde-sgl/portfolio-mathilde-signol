@@ -5,6 +5,7 @@ import ButtonsList from '@/components/buttons-list';
 import { useRouter } from 'next/router';
 import ProjectCard from '@/components/project-card';
 import BottomBar from '@/components/bottomBar';
+import Head from 'next/head';
 
 const logoProps = "h-auto w-[var(--dimension-5xl)] object-contain";
 const cardProps = "flex flex-col" //bg-[var(--color-card)] rounded-[var(--radius-ml)] px-[var(--spacing-ml)] pb-[var(--spacing-ml)] sm:pt-[var(--spacing-xs)] sm:px-[var(--spacing-l)] sm:pb-[var(--spacing-l)]"
@@ -14,6 +15,11 @@ export default function Homepage() {
 
   return (
     <div className="flex flex-col bg-[var(--color-background)]">
+      <Head>
+        <title> Accueil - Mathilde Signol </title>
+        <link rel="icon" type="image/x-icon" href="/images/favicon.ico"/>
+      </Head>
+
       {/* TOP BAR */}
       <TopBar />
 
