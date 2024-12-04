@@ -61,7 +61,7 @@ export default function Homepage() {
         </section>
 
         {/* SECTION 3 : ACTIONS */}
-        <section id="main-actions" className='flex items-end justify-end'>    
+        <section id="main-actions" className='flex justify-center'>    
           <ButtonsList
             size="large"
             secondaryAction={{text: "Découvrir", onClick: () => {document.querySelector("#my-proposal")?.scrollIntoView({ behavior: "smooth"});}, leadingIcon: "arrow-down",}}            
@@ -129,7 +129,7 @@ export default function Homepage() {
             </div>
           </div>
 
-          <div id="main-actions" className='flex items-end justify-end'>    
+          <div id="main-actions" className='flex justify-center'>    
             <ButtonsList
               size="large"
               secondaryAction={{text: "Découvrir mes expertises", onClick: () => router.push('/expertises'), leadingIcon: "arrow-next",}}             
@@ -152,10 +152,10 @@ export default function Homepage() {
             <img src="/images/logo-klm.png" alt="KLM" className={logoProps}/>
             <img src="/images/logo-airbus.png" alt="Airbus" className={logoProps}/>
           </div>
-          <div className='flex items-end justify-end'>    
+          <div className='flex justify-center'>    
             <ButtonsList
               size="large"
-              secondaryAction={{text: "Me contacter", onClick: () => {document.querySelector("#footer")?.scrollIntoView({ behavior: "smooth"});}, leadingIcon: "arrow-down",}}             
+              secondaryAction={{text: "Me contacter", onClick: () => {document.querySelector("#footer")?.scrollIntoView({ behavior: "smooth"});}, leadingIcon: "call",}}             
             />        
          </div>
         </section>
@@ -194,7 +194,7 @@ export default function Homepage() {
             badges = {[{text: "Branding"}, {text: "UX Design"}, {text: "UI Design"}, {text: "Design System"}, {text: "Product Management"},]}>
           </ProjectCard>
 
-          <div className='flex items-end justify-end'>    
+          <div className='flex justify-center'>    
             <ButtonsList
               size="large"
               secondaryAction={{text: "Voir plus de projets", onClick: () => router.push('/experiences'), leadingIcon: "arrow-next",}}             

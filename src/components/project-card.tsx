@@ -51,8 +51,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             </div>
 
             {/* Icône alignée à droite */}
-            <div className="opacity-0 sm:group-hover:opacity-100 transition-opacity duration-600 ease-in-out">
+            <div className="flex flex-row gap-[var(--spacing-sm)] opacity-0 sm:group-hover:opacity-100 transition-opacity duration-600 ease-in-out">
                 <Icon name="arrow-next" size="var(--dimension-l)" />
+                <span className="text1 !text-[var(--color-black)]">Découvrir</span>
             </div>
         </Link>
     );
