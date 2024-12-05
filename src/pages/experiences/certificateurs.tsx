@@ -55,12 +55,24 @@ export default function ExperienceCertificateurs() {
             </p>
         </section>
 
+        {/* PARCOURS */}
+        <section id="parcours" className={sectionProps}>
+            <h2 className='h2'>Parcours utilisateurs</h2>
+            <img src="/images/certificateurs-parcours.png" alt="parcours utilisateurs depuis la page d'accueil"></img>
+        </section>
+
         {/* MAQUETTES */}
         <section id="maquettes" className={sectionProps}>
             <h2 className='h2'>Maquettes</h2>
             <img src="/images/certificateurs-maquettes1.png" alt="maquettes de la page d'accueil, en version mobile & desktop" className='pb-[var(--spacing-xl)]'></img>
             <img src="/images/certificateurs-maquettes2.png" alt="maquettes du dossier de formation, en version mobile & desktop" className='pb-[var(--spacing-xl)]'></img>
             <img src="/images/certificateurs-maquettes3.png" alt="maquettes de la recherche de formation, en version mobile & desktop"></img>
+        </section>
+
+        {/* PROTOTYP */}
+        <section id="prototype" className={sectionProps}>
+            <h2 className='h2'>Prototype</h2>
+            <img src="/images/certificateurs-prototype.png" alt="prototype de la création d'un compte"></img>
         </section>
 
         <div id="main-actions" className='flex flex-col-reverse gap-[var(--spacing-ml)] sm:flex-row justify-between pt-[var(--spacing-xl)] pb-[var(--spacing-4xl)]'>
