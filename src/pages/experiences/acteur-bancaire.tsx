@@ -31,11 +31,14 @@ export default function ExperienceActeurBancaire() {
 
         {/* INTRODUCTION */}
         <section id="introduction" className={sectionProps}>
-            <p className='text2'>Saas ・ B2E</p>
+            <div className='flex flex-row items-center gap-[var(--spacing-l)]'>
+              <p className='text2'>Saas ・ B2E</p>
+              <div style={{width: "var(--dimension-3xs)", height: "var(--dimension-sm)", borderRadius: "var(--radius-2xs)", backgroundColor: "var(--color-divider)",}}/>
+              <span className='text2 !font-semibold'>2022-2023</span>
+            </div>
             <Badges badges = {[{text: "Lead"}, {text: "Branding"}, {text: "UX Design"}, {text: "UI Design"}, {text: "Design System"}, {text: "Product Management"},]}></Badges>
             <p className='text1 max-w-[720px] pb-[var(--spacing-sm)]'>
                 Refonte UX & UI de la Marketplace, plateforme e-commerce des produits utilisés dans le cadre de leur travail les collaborateurs de cet acteur bancaire. <br />
-                Mise en place & gestion du Design System de l'équipe.
             </p>
             <img src="/images/acteurbancaire-intro.png" alt="maquettes montrant l'interface graphique"></img>
         </section>
@@ -51,16 +54,22 @@ export default function ExperienceActeurBancaire() {
             <p className='text1 max-w-[720px] pb-[var(--spacing-sm)] flex flex-col gap-[var(--spacing-xs)]'>
               <span> → Définir une identité forte pour appuyer son rayonnement interne. </span>
               <span> → Refondre l'UX & l'UI afin d'inclure la diversité des collaborateurs 
-              et de proposer des produits variées et complexes. </span>
+              et de proposer des produits variés et complexes. </span>
               <span> → Organiser l'équipe en mettant en place un Design System. </span>
             </p>
+        </section>
+
+        {/* TIMELINE */}
+        <section id="timeline" className={sectionProps}>
+            <h2 className='h2'>Timeline Projet</h2>
+            <img src="/images/acteurbancaire-timeline.png" alt="timeline du projet, de Novembre à Juin"></img>
         </section>
 
         {/* LOGOS */}
         <section id="logos" className={sectionProps}>
             <h2 className='h2'>Logos</h2>
             <img src="/images/acteurbancaire-graphic-design.png" alt="déclinaisons des logos Marketplace"></img>
-        </section>*
+        </section>
 
         {/* DESIGN SYSTEM */}
         {/*<section id="design-system" className={sectionProps}>

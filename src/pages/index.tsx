@@ -40,7 +40,7 @@ export default function Homepage() {
             <img 
               src="/images/photo-ms.png" 
               alt="Mathilde Signol" 
-              className="w-[400px] h-[400px] object-cover rounded-full"
+              className="w-full h-auto sm:w-[400px] sm:h-[400px] object-cover rounded-full"
             />
           </div>
 
@@ -53,9 +53,13 @@ export default function Homepage() {
                 Vous voulez <span className="text1Bold">construire</span> ou encore <span className="text1Bold">coacher</span> votre équipe de Designers ?
               </p>
 
-              <p className='h3 pt-[var(--spacing-l)]'>
-                Je vous accompagne !
-              </p>
+              <p className='h3 pt-[var(--spacing-l)]'> Je vous accompagne ! </p>
+
+              <div className='flex flew-row items-center gap-[var(--spacing-sm)]'>
+                <div style={{width: "var(--dimension-m)", height: "var(--dimension-m)", borderRadius: "50%", backgroundColor: "var(--color-dark-success)",}}/>
+                <p className='text1 !text-[var(--color-dark-success)]'> Disponible </p>
+              </div>
+
             </div>
           </div>
         </section>
@@ -79,7 +83,7 @@ export default function Homepage() {
                 Une approche centrée utilisateurs
               </span>
               <span className='text1'>
-                Placer vos <span className="text1Bold">utilisateurs</span> au coeur de nos décisions, en prenant compte de vos
+                Placer vos <span className="text1Bold">utilisateurs</span> au coeur de vos décisions, en prenant compte de vos
                 <span className="text1Bold"> enjeux stratégiques</span> & vos <span className="text1Bold">contraintes métiers</span>.
               </span>
             </div>

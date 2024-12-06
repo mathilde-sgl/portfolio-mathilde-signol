@@ -120,7 +120,7 @@ export default function Experiences() {
         <section id="title"><h1 className="h1">Mes expertises</h1></section>
 
         {/* SECTION 1 : MES COMPÉTENCES */}
-        <section id= "compétences">
+        <section id= "competences">
             <div className='flex flex-row items-center gap-[var(--spacing-l)]'>
                 {/* <Icon name="competencies" size="var(--dimension-2xl)"></Icon>*/}
                 <h2 className="h2 !text-[--color-primary]">Mes compétences</h2>

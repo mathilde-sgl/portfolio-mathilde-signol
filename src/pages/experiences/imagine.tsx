@@ -31,11 +31,26 @@ export default function Imagine() {
 
         {/* INTRODUCTION */}
         <section id="introduction" className={sectionProps}>
+              <span className='text2 !font-semibold'>2020-2024</span>
             <Badges badges = {[{text: "Branding"}, {text: "UX Design"}, {text: "UI Design"}]}></Badges>
             <p className='text1 max-w-[720px] pb-[var(--spacing-sm)]'>
             Création de visuels à destination de l'agence de design de mc2i : Imagine.
             </p>
             <img src="/images/imagine-intro.png" alt="maquettes montrant l'interface graphique"></img>
+        </section>
+
+        {/* PRÉSENTATION */}
+        <section id="presentation" className={sectionProps}>
+            <h2 className='h3 !text-[var(--color-symbol-primary)]'>Contexte</h2>
+            <p className='text1 max-w-[720px] pb-[var(--spacing-sm)]'>
+            Initialement une offre orientée Design Thinking, Imagine devient en 2021 l'agence de Design de mc2i.
+            Elle veut donc se doter d'une nouvelle identité, refletant son ambition.
+            </p>
+            <h2 className='h3 !text-[var(--color-symbol-primary)]'>Enjeux</h2>
+            <p className='text1 max-w-[720px] pb-[var(--spacing-sm)] flex flex-col gap-[var(--spacing-xs)]'>
+              <span> → Réaliser la direction artistique et les supports commerciaux de l'agence. </span>
+              <span> → Accompagner de designers Junior dans leur montée en compétences. </span>
+            </p>
         </section>
 
         {/* LOGOS */}

@@ -31,7 +31,11 @@ export default function ExperienceCertificateurs() {
 
         {/* INTRODUCTION */}
         <section id="introduction" className={sectionProps}>
-            <p className='text2'>SaaS ・ B2B</p>
+            <div className='flex flex-row items-center gap-[var(--spacing-l)]'>
+              <p className='text2'>Saas ・ B2B</p>
+              <div style={{width: "var(--dimension-3xs)", height: "var(--dimension-sm)", borderRadius: "var(--radius-2xs)", backgroundColor: "var(--color-divider)",}}/>
+              <span className='text2 !font-semibold'>2022</span>
+            </div>
             <Badges badges = {[{text: "Branding"}, {text: "UX Design"}, {text: "UI Design"}]}></Badges>
             <p className='text1 max-w-[720px] pb-[var(--spacing-sm)]'>
             Création d'une plateforme SaaS pour transmettre les certifications, 

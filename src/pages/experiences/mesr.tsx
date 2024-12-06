@@ -31,7 +31,11 @@ export default function ExperienceMesr() {
 
         {/* INTRODUCTION */}
         <section id="introduction" className={sectionProps}>
-            <p className='text2'>Saas ・ B2C</p>
+            <div className='flex flex-row items-center gap-[var(--spacing-l)]'>
+              <p className='text2'>Saas ・ B2C</p>
+              <div style={{width: "var(--dimension-3xs)", height: "var(--dimension-sm)", borderRadius: "var(--radius-2xs)", backgroundColor: "var(--color-divider)",}}/>
+              <p className='text2 !font-semibold'>2024</p>
+            </div>
             <Badges badges={[{text: "UX Design"}, {text: "UI Design"}, {text: "Design System"}]}></Badges>
             <p className='text1 max-w-[560px] pb-[var(--spacing-sm)]'>
                 Création d'un dispositif ePortfolio pour valoriser une approche par compétences des étudiants français. <br />

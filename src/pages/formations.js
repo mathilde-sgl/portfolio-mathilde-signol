@@ -22,60 +22,78 @@ export default function Experiences() {
       <TopBar />
 
       {/* MAIN CONTENT */}
-      <div className="custom-container pt-[var(--spacing-xl)] space-y-[var(--spacing-3xl)]">
+      <div className="custom-container pt-[var(--spacing-xl)] space-y-[var(--spacing-l)]">
         
         {/* TITLE */}
-        <section id="title"><h1 className="h1 w-full">Mes formations</h1></section>
+        <section id="title"><h1 className="h1">Mes formations</h1></section>
 
-        {/* LIST */}
-        <section className="w-full max-w-[1200px] space-y-[var(--spacing-2xl)] pb-[var(--spacing-4xl)]">
+        <div className='grid grid-cols-1 md:grid-cols-2 items-start gap-[var(--spacing-2xl)]'>
 
-          {/* OPQUAST */}
-          <div id='opquast' className='flex flex-row gap-[var(--spacing-2xl)] items-center'>
-            <img src="/images/logoFormation-opquast.png" alt="Opquast" className={projectProps}/>
-            <div className={projectCardProps}>
-              <h3 className='h5'>Certification Qualité Web</h3>
-              <span className='text2'>Opquast   |   11.2023</span>
-            </div>
-          </div>
+          {/* CERTIFICATIONS */}
+          <section id= "certifications">
+              <div className='flex flex-row items-center gap-[var(--spacing-l)]'>
+                  <h2 className="h2 !text-[--color-primary]">Certifications</h2>
+              </div>
 
-          {/* LE LAPTOP */}
-          <div id='lelaptop' className='flex flex-row gap-[var(--spacing-2xl)] justify-items-center items-center'>
-            <img src="/images/logoFormation-lelaptop.png" alt="Le Laptop" className={projectProps}/>
-            <div className={projectCardProps}>
-              <h3 className='h5'>UX Design</h3>
-              <span className='text2'>Le Laptop | 09.2022</span>
-            </div>
-          </div>
+              <div className='flex flex-col space-y-[var(--spacing-2xl)] pb-[var(--spacing-4xl)]'>
+                  {/* OPQUAST */}
+                  <div id='opquast' className='flex flex-row gap-[var(--spacing-2xl)] items-center'>
+                    <img src="/images/logoFormation-opquast.png" alt="Opquast" className={projectProps}/>
+                    <div className={projectCardProps}>
+                      <h3 className='h5'>Certification Qualité Web</h3>
+                      <span className='text2'>Opquast   |   11.2023</span>
+                    </div>
+                  </div>
 
-          {/* PSPO1 */}
-          <div id='PSPO1'className='flex flex-row gap-[var(--spacing-2xl)] items-center'>
-            <img src="/images/logoFormation-scrum.png" alt="Scrum.org" className={projectProps}/>
-            <div className={projectCardProps}>
-              <h3 className='h5'>Certification PSPO1</h3>
-              <span className='text2'>Scrum.org | 07.2021</span>
-            </div>
-          </div>
+                  {/* PSPO1 */}
+                  <div id='PSPO1'className='flex flex-row gap-[var(--spacing-2xl)] items-center'>
+                    <img src="/images/logoFormation-scrum.png" alt="Scrum.org" className={projectProps}/>
+                    <div className={projectCardProps}>
+                      <h3 className='h5'>Certification PSPO1</h3>
+                      <span className='text2'>Scrum.org | 07.2021</span>
+                    </div>
+                  </div>
+              </div>
 
-          {/* HEC ISAE */}
-          <div id='hecisae'className='flex flex-row gap-[var(--spacing-2xl)] items-center'>
-            <img src="/images/logoFormation-hecisae.png" alt="HEC ISAE" className={projectProps}/>
-            <div className={projectCardProps}>
-              <h3 className='h5'>Master spécialisé en Management de Grands Projets</h3>
-              <span className='text2'>HEC / ISAE-Supaéro | 2018</span>
-            </div>
-          </div>
+          </section>
 
-          {/* ENSAM */}
-          <div id='ensam'className='flex flex-row gap-[var(--spacing-2xl)] items-center'>
-            <img src="/images/logoFormation-ensam.png" alt="Arts & Métiers" className={projectProps}/>
-            <div className={projectCardProps}>
-              <h3 className='h5'>Diplôme d'ingénieur</h3>
-              <span className='text2'>Arts & Métiers | 2017</span>
-            </div>
-          </div>
+          {/* FORMATIONS */}
+          <section id= "certifications">
+              <div className='flex flex-row items-center gap-[var(--spacing-l)]'>
+                  <h2 className="h2 !text-[--color-primary]">Formations</h2>
+              </div>
 
-        </section>
+              <div className='flex flex-col space-y-[var(--spacing-2xl)] pb-[var(--spacing-4xl)]'>
+                  {/* LE LAPTOP */}
+                  <div id='lelaptop' className='flex flex-row gap-[var(--spacing-2xl)] justify-items-center items-center'>
+                    <img src="/images/logoFormation-lelaptop.png" alt="Le Laptop" className={projectProps}/>
+                    <div className={projectCardProps}>
+                      <h3 className='h5'>UX Design</h3>
+                      <span className='text2'>Le Laptop | 09.2022</span>
+                    </div>
+                  </div>
+
+                  {/* HEC ISAE */}
+                  <div id='hecisae'className='flex flex-row gap-[var(--spacing-2xl)] items-center'>
+                    <img src="/images/logoFormation-hecisae.png" alt="HEC ISAE" className={projectProps}/>
+                    <div className={projectCardProps}>
+                      <h3 className='h5'>Master spécialisé en Management de Grands Projets</h3>
+                      <span className='text2'>HEC / ISAE-Supaéro | 2018</span>
+                    </div>
+                  </div>
+
+                  {/* ENSAM */}
+                  <div id='ensam'className='flex flex-row gap-[var(--spacing-2xl)] items-center'>
+                    <img src="/images/logoFormation-ensam.png" alt="Arts & Métiers" className={projectProps}/>
+                    <div className={projectCardProps}>
+                      <h3 className='h5'>Diplôme d'ingénieur</h3>
+                      <span className='text2'>Arts & Métiers | 2017</span>
+                    </div>
+                  </div>
+              </div>
+
+          </section>
+        </div>
         
       </div>
       <BottomBar></BottomBar>
