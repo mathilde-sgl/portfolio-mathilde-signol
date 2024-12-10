@@ -69,6 +69,12 @@ export default function ExperienceMesr() {
             <img src="/images/mesr-design-system.png" alt="design System de Cofolio"></img>
         </section>
 
+        {/* USER FLOW */}
+        <section id="userflow" className={sectionProps}>
+            <h2 className='h2'>Parcours utilisateurs</h2>
+            <img src="/images/mesr-userflow.png" alt="parcours utilisateur d'un étudiant qui souhaite suivre et valoriser ses compétences"></img>
+        </section>
+
         {/* MAQUETTES */}
         <section id="maquettes" className={sectionProps}>
             <h2 className='h2'>Maquettes</h2>
