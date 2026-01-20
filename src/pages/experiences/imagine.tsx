@@ -77,7 +77,7 @@ export default function Imagine() {
             /> 
             <ButtonsList
               size="large"
-              secondaryAction={{text: "Projet suivant", onClick: () => router.push('/experiences/cofolio'), leadingIcon: "arrow-next",}}             
+              secondaryAction={{text: "Projet suivant", onClick: () => router.push('/experiences/kompaz'), leadingIcon: "arrow-next",}}             
             />        
         </div>
       </div>

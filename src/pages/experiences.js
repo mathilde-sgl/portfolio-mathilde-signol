@@ -28,6 +28,16 @@ export default function Experiences() {
         {/* LIST */}
         <section className="w-full max-w-[1200px] space-y-[var(--spacing-3xl)] pb-[var(--spacing-4xl)]">
 
+          {/* Projet Kompaz */}
+          <ProjectCard
+            title='Kompaz'
+            id = "kompaz"
+            href = "/experiences/kompaz"
+            image = "/images/project-kompaz.png"
+            typeText = 'Saas ・ B2E'
+            badges = {[{text: "UX Design"}, {text: "UI Design"}, {text: "Design System"}]}>
+          </ProjectCard>
+
           {/* Projet MESR */}
           <ProjectCard
             title='Cofolio'

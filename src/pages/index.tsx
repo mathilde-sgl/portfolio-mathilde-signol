@@ -28,8 +28,8 @@ export default function Homepage() {
         
         {/* SECTION 1 : Main Title */}
         <section id="title" className="space-y-[var(--spacing-sm)]">
-          <h1 className="h1 !pb-[var(--spacing-none)]">UX UI Designer Senior</h1>
-          <p className="h4 !pt-[var(--spacing-sm)] !text-[var(--color-text2)]">depuis 6 ans, à Bordeaux</p>
+          <h1 className="h1 !pb-[var(--spacing-none)]">Lead UX UI Designer</h1>
+          <p className="h4 !pt-[var(--spacing-sm)] !text-[var(--color-text2)]">8 ans d'expérience ・ Bordeaux & Toulouse</p>
         </section>
 
         {/* SECTION 2 : Intro */}
@@ -69,7 +69,7 @@ export default function Homepage() {
           <ButtonsList
             size="large"
             secondaryAction={{text: "Découvrir", onClick: () => {document.querySelector("#my-proposal")?.scrollIntoView({ behavior: "smooth"});}, leadingIcon: "arrow-down",}}            
-            tertiaryAction={{text: "Me contacter", onClick: () => {document.querySelector("#footer")?.scrollIntoView({ behavior: "smooth"});},leadingIcon: "call",}}   
+            tertiaryAction={{text: "Me contacter", onClick: () => {document.querySelector("#footer")?.scrollIntoView({ behavior: "smooth"});},leadingIcon: "mail",}}   
           />        
         </section>
 
@@ -146,6 +146,7 @@ export default function Homepage() {
         <section id="my-clients" className="w-full max-w-[1200px] space-y-[var(--spacing-sm)] space-x-[var(--spacing-sm)]">
           <h2 className='h2'>Ils m'ont confié leurs produits</h2>
           <div className='grid grid-cols-3 sm:grid-cols-4 items-center gap-[var(--spacing-2xl)]'>
+            <img src="/images/logo-acteur-energie.png" alt="Acteur de l'énergie" className={logoProps}/>
             <img src="/images/logo-acteur-bancaire.png" alt="Acteur Bancaire" className={logoProps}/>
             <img src="/images/logo-mesr.png" alt="Ministère de l'éducation supérieure et de la recherche" className={logoProps}/>
             <img src="/images/logo-cdc.png" alt="Caisse des dépôts et Consignations" className={logoProps}/>
@@ -168,7 +169,17 @@ export default function Homepage() {
         <section id="last-projects" className="w-full max-w-[1200px] space-y-[var(--spacing-xl)]">
           <h2 className='h2'>Mes derniers projets</h2>
 
-          {/* Projet MESR */}
+          {/* Projet Kompaz */}
+          <ProjectCard
+            title='Kompaz'
+            id = "kompaz"
+            href = "/experiences/kompaz"
+            image = "/images/project-kompaz.png"
+            typeText = 'Saas ・ B2E'
+            badges = {[{text: "UX Design"}, {text: "UI Design"}, {text: "Design System"}]}>
+          </ProjectCard>
+
+          {/* Projet Cofolio */}
           <ProjectCard
             title='Cofolio'
             id = "cofolio"
@@ -186,16 +197,6 @@ export default function Homepage() {
             image = "/images/project-marketplace.png"
             typeText = 'Saas ・ B2E'
             badges = {[{text: "Lead"}, {text: "Branding"}, {text: "UX Design"}, {text: "UI Design"}, {text: "Design System"}, {text: "Product Management"},]}>
-          </ProjectCard>
-
-          {/* Projet CPF */}
-          <ProjectCard
-            title='Mon Compte Formation'
-            id = "cpf"
-            href = "/experiences/moncompteformation"
-            image = "/images/project-cpf.png"
-            typeText = 'Site web ・ App ・ B2C'
-            badges = {[{text: "Branding"}, {text: "UX Design"}, {text: "UI Design"}, {text: "Design System"}, {text: "Product Management"},]}>
           </ProjectCard>
 
           <div className='flex justify-center'>    

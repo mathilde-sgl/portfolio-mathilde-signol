@@ -1,32 +1,54 @@
-// src/components/Icon.js
-import React from 'react';
+import React from "react";
 
-// Charger dynamiquement tous les fichiers SVG dans le dossier 'icons'
-const iconsContext = require.context('../app/icons', false, /\.svg$/);
+import ArrowBack from "@/app/icons/arrow-back.svg";
+import ArrowDown from "@/app/icons/arrow-down.svg";
+import ArrowNext from "@/app/icons/arrow-next.svg";
+import ArrowTop from "@/app/icons/arrow-top.svg";
 
-// Créer un objet `icons` avec chaque nom d'icône mappé à son composant SVG
-const icons = iconsContext.keys().reduce((acc, path) => {
-    const iconName = path.replace('./', '').replace('.svg', '');
-    acc[iconName] = iconsContext(path).default || iconsContext(path);
-    return acc;
-}, {});
+import Call from "@/app/icons/call.svg";
+import Close from "@/app/icons/close.svg";
+import Competencies from "@/app/icons/competencies.svg";
+import Copy from "@/app/icons/copy.svg";
+import Degrees from "@/app/icons/degrees.svg";
+import Experiences from "@/app/icons/experiences.svg";
+import Home from "@/app/icons/home.svg";
+import Linkedin from "@/app/icons/linkedin.svg";
+import Mail from "@/app/icons/mail.svg";
+import Menu from "@/app/icons/menu.svg";
+import Tools from "@/app/icons/tools.svg";
 
-const Icon = ({ name, size = "24px", color = "currentColor", ...props }) => {
-    const SvgIcon = require(`../app/icons/${name}.svg`).default;
-
-    return (
-        <SvgIcon 
-            style={{ 
-                color: color, 
-                width: size, 
-                height: size,
-                display: 'inline-flex'
-            }} 
-            aria-label={name}
-            {...props}
-        />
-    );
-
+const icons = {
+  "arrow-back": ArrowBack,
+  "arrow-down": ArrowDown,
+  "arrow-next": ArrowNext,
+  "arrow-top": ArrowTop,
+  call: Call,
+  close: Close,
+  competencies: Competencies,
+  copy: Copy,
+  degrees: Degrees,
+  experiences: Experiences,
+  home: Home,
+  linkedin: Linkedin,
+  mail: Mail,
+  menu: Menu,
+  tools: Tools,
 };
 
-export default Icon;
+export default function Icon({ name, size = 24, color = "currentColor", ...props }) {
+  const SvgIcon = icons[name];
+
+  if (!SvgIcon) {
+    throw new Error(`Icon "${name}" does not exist`);
+  }
+
+  return (
+    <SvgIcon
+      width={size}
+      height={size}
+      fill={color}
+      aria-label={name}
+      {...props}
+    />
+  );
+}

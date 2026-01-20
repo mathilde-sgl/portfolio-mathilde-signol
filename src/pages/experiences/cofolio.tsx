@@ -84,7 +84,7 @@ export default function ExperienceMesr() {
         <div id="main-actions" className='flex flex-col-reverse gap-[var(--spacing-ml)] sm:flex-row justify-between pt-[var(--spacing-xl)] pb-[var(--spacing-4xl)]'>
             <ButtonsList
               size="large"
-              tertiaryAction={{text: "Projet précédent", onClick: () => router.push('/experiences/imagine'), leadingIcon: "arrow-back",}}             
+              tertiaryAction={{text: "Projet précédent", onClick: () => router.push('/experiences/kompaz'), leadingIcon: "arrow-back",}}             
             /> 
             <ButtonsList
               size="large"
