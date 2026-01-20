@@ -29,7 +29,7 @@ export default function Homepage() {
         {/* SECTION 1 : Main Title */}
         <section id="title" className="space-y-[var(--spacing-sm)]">
           <h1 className="h1 !pb-[var(--spacing-none)]">Lead UX UI Designer</h1>
-          <p className="h4 !pt-[var(--spacing-sm)] !text-[var(--color-text2)]">8 ans d'expérience ・ Bordeaux & Toulouse</p>
+          <p className="h4 !pt-[var(--spacing-sm)] !text-[var(--color-text2)]">8 ans d'expérience ・ Bordeaux</p>
         </section>
 
         {/* SECTION 2 : Intro */}

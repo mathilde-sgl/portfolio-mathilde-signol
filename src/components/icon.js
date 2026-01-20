@@ -12,7 +12,7 @@ import Copy from "@/app/icons/copy.svg";
 import Degrees from "@/app/icons/degrees.svg";
 import Experiences from "@/app/icons/experiences.svg";
 import Home from "@/app/icons/home.svg";
-import Linkedin from "@/app/icons/linkedin.svg";
+import Linkedin from "@/app/icons/linkedIn.svg";
 import Mail from "@/app/icons/mail.svg";
 import Menu from "@/app/icons/menu.svg";
 import Tools from "@/app/icons/tools.svg";

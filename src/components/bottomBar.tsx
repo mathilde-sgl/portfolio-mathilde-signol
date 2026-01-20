@@ -48,7 +48,7 @@ export const BottomBar = () => {
                 </div>
             </div>
 
-            <p className='text2 text-center'>© 2024 - Mathilde Signol - UX UI Designer Senior - Tous droits réservés.</p>
+            <p className='text2 text-center'>© 2026 - Mathilde Signol - Lead UX UI Designer - Tous droits réservés.</p>
 
         </footer>
     );
