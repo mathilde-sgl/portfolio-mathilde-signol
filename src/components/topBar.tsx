@@ -1,8 +1,10 @@
+//src/components/topBar.tsx
+
 import React, { useState } from 'react';
-import '../app/globals.css';
 import Button from './text-button';
 import Link from 'next/link';
 import Drawer from "./drawer";
+import Icon, { type IconName } from "./icon";
 
 export const TopBar = () => {
     const [isDrawerOpen, setDrawerOpen] = useState(false);
@@ -12,7 +14,14 @@ export const TopBar = () => {
         { label: "Mes expertises", href: "/expertises", leadingIcon: "competencies", trailingIcon: "arrow-next"},
         { label: "Mes expériences", href: "/experiences", leadingIcon: "experiences", trailingIcon: "arrow-next"},
         { label: "Mes formations", href: "/formations", leadingIcon: "degrees", trailingIcon: "arrow-next"},
-      ];
+        ] satisfies Array<{
+            label: string;
+            href: string;
+            leadingIcon?: IconName;
+            trailingIcon?: IconName;
+            size?: "large";
+        }>;
+        //];
 
     return (
         <div className="fixed bg-[#fdfdfd] top-0 left-0 w-full z-50 flex items-center justify-between px-4 py-2 border-b border-[var(--color-divider)] md:px-8">
@@ -35,7 +44,7 @@ export const TopBar = () => {
                     text={isDrawerOpen ? 'Fermer' : 'Menu'}
                     type="basic"
                     leadingIcon={isDrawerOpen ? 'close' : 'menu'}
-                    onClick={() => setDrawerOpen(true)}
+                    onClick={() => setDrawerOpen(prev => !prev)}
                 />
             </div>
 
@@ -44,12 +53,7 @@ export const TopBar = () => {
                 isOpen={isDrawerOpen}
                 onClose={() => setDrawerOpen(false)}
                 title="Découvrez mon univers"
-                navItems={navItems.map(item => ({
-                    ...item,
-                    onClick: () => {
-                    setDrawerOpen(false); // Ferme le menu
-                    }
-                }))}
+                navItems={navItems}
             />
         </div>
     );

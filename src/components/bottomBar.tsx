@@ -1,4 +1,5 @@
-import '../app/globals.css';
+//src/components/bottomBar
+
 import Link from 'next/link';
 
 export const BottomBar = () => {

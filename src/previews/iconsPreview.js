@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Icon from '../../components/icon.js';
+import Icon from '../../components/icon';
 
 const IconsPreview = () => {
     const [iconSizes, setIconSizes] = useState({});

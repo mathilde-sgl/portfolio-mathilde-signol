@@ -1,5 +1,6 @@
+//src/pages/experiences.js
+
 import React from 'react';
-import '../app/globals.css';
 import TopBar from '../components/topBar';
 import { useRouter } from 'next/router';
 import ProjectCard from '../components/project-card';

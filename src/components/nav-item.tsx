@@ -1,6 +1,8 @@
+//src/components/nav-item
+
 import Link from "next/link";
 import React, { useReducer } from "react";
-import Icon from "./icon";
+import Icon, { type IconName } from "./icon";
 
 const styles = {
   enableStyle: "bg-transparent text-[var(--color-black)]",
@@ -25,8 +27,8 @@ const styles = {
 interface NavItemProps {
   text: string;
   size?: "small" | "medium" | "large";
-  leadingIcon?: string;
-  trailingIcon?: string;
+  leadingIcon?: IconName;
+  trailingIcon?: IconName;
   stateProp?: "enabled" | "hovered";
   href?: string
   onClick?: () => void;
@@ -52,7 +54,8 @@ const NavItem: React.FC<NavItemProps> = ({
   `;
 
   return (
-    <Link href={href || "#"} passHref
+    <Link 
+        href={href ?? "/"}
         className={navItemClasses}
         onMouseEnter={setHovered}
         onMouseLeave={setHovered}

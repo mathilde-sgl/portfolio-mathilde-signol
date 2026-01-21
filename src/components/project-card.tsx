@@ -1,7 +1,7 @@
 import Badges from "./badge";
 import React from "react";
 import Link from "next/link";
-import Icon from "./icon";
+import Icon, { type IconName } from "./icon";
 
 // Styles
 const projectCardProps =
@@ -15,7 +15,7 @@ interface ProjectCardProps {
     title: string;
     image: string;
     typeText: string;
-    badges: { text: string; size?: "large"; leadingIcon?: string }[];
+    badges: { text: string; size?: "large"; leadingIcon?: IconName }[];
     stateProp?: "enabled" | "hovered";
     href?: string;
     onClick?: () => void;

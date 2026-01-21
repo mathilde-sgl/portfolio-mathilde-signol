@@ -1,5 +1,5 @@
 import React from "react";
-import Icon from "./icon";
+import Icon, { type IconName } from "./icon";
 
 const styles = {
   size: {
@@ -22,75 +22,90 @@ const styles = {
     medium: "var(--radius-xs)",
     large: "var(--radius-sm)",
   },
-};
+} as const;
+
+type Illustration =
+  | { type: "icon"; name: IconName }
+  | { type: "image"; src: string; alt?: string };
 
 interface IllustrationTextProps {
   text: string;
   size?: "small" | "medium" | "large";
-  leadingIllustration?: string;
-  trailingIllustration?: string;
+  leadingIllustration?: Illustration;
+  trailingIllustration?: Illustration;
 }
 
 interface IllustrationTextsProps {
   illustrationTexts: IllustrationTextProps[];
 }
 
+function assertPublicImagesPath(src: string) {
+  // On force public/images -> accessible via /images/...
+  if (!src.startsWith("/images/")) {
+    throw new Error(
+      `Image src must start with "/images/". Received: "${src}". Put the file in public/images and use "/images/xxx.png".`
+    );
+  }
+  if (!src.endsWith(".png")) {
+    throw new Error(
+      `Only .png images are allowed. Received: "${src}".`
+    );
+  }
+}
+
+function IllustrationView({
+  illustration,
+  text,
+  size = "medium",
+}: {
+  illustration: Illustration;
+  text: string;
+  size?: "small" | "medium" | "large";
+}) {
+  const dim = styles.illustrationSize[size];
+  const radius = styles.illustrationRadius[size];
+
+  if (illustration.type === "image") {
+    assertPublicImagesPath(illustration.src);
+
+    return (
+      <img
+        src={illustration.src}
+        alt={illustration.alt ?? text}
+        style={{
+          width: dim,
+          height: dim,
+          borderRadius: radius,
+        }}
+      />
+    );
+  }
+
+  return <Icon name={illustration.name} size={dim} />;
+}
+
 const IllustrationTexts: React.FC<IllustrationTextsProps> = ({ illustrationTexts }) => {
-  
   return (
     <div className="flex flex-col items-start gap-4 w-full">
-      {illustrationTexts.map((illustrationText, index) => {
-        const illustrationTextsClasses = `
+      {illustrationTexts.map((item, index) => {
+        const size = item.size ?? "medium";
+
+        const classes = `
           inline-flex items-center justify-center transition ease-in-out duration-200
-          ${styles.size[illustrationText.size || "medium"]} 
-          ${styles.illustrationRadius[illustrationText.size || "medium"]}
-          ${styles.illustrationSpacing[illustrationText.size || "medium"]} whitespace-nowrap
+          ${styles.size[size]}
+          ${styles.illustrationSpacing[size]} whitespace-nowrap
         `;
 
-        // Fonction pour déterminer si l'illustration est une image ou une icône
-        const isImage = (illustration: string | undefined) =>
-          illustration && (illustration.endsWith(".png") || illustration.endsWith(".jpg") || illustration.endsWith(".jpeg"));
-
         return (
-          <div key={index} className={illustrationTextsClasses}>
-            {illustrationText.leadingIllustration && (
-              isImage(illustrationText.leadingIllustration) ? (
-                <img
-                  src={illustrationText.leadingIllustration}
-                  alt={illustrationText.text}
-                  className="rounded"
-                  style={{
-                    width: styles.illustrationSize[illustrationText.size || "medium"],
-                    height: styles.illustrationSize[illustrationText.size || "medium"],
-                    borderRadius: styles.illustrationRadius[illustrationText.size || "medium"],
-                  }}
-                />
-              ) : (
-                <Icon
-                  name={illustrationText.leadingIllustration}
-                  size={styles.illustrationSize[illustrationText.size || "medium"]}
-                />
-              )
+          <div key={index} className={classes}>
+            {item.leadingIllustration && (
+              <IllustrationView illustration={item.leadingIllustration} text={item.text} size={size} />
             )}
-            <span>{illustrationText.text}</span>
-            {illustrationText.trailingIllustration && (
-              isImage(illustrationText.trailingIllustration) ? (
-                <img
-                  src={illustrationText.trailingIllustration}
-                  alt={illustrationText.text}
-                  className="rounded"
-                  style={{
-                    width: styles.illustrationSize[illustrationText.size || "medium"],
-                    height: styles.illustrationSize[illustrationText.size || "medium"],
-                    borderRadius: styles.illustrationRadius[illustrationText.size || "medium"],
-                  }}
-                />
-              ) : (
-                <Icon
-                  name={illustrationText.trailingIllustration}
-                  size={styles.illustrationSize[illustrationText.size || "medium"]}
-                />
-              )
+
+            <span>{item.text}</span>
+
+            {item.trailingIllustration && (
+              <IllustrationView illustration={item.trailingIllustration} text={item.text} size={size} />
             )}
           </div>
         );
@@ -100,4 +115,3 @@ const IllustrationTexts: React.FC<IllustrationTextsProps> = ({ illustrationTexts
 };
 
 export default IllustrationTexts;
-

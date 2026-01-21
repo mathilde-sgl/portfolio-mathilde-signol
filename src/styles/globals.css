@@ -90,6 +90,7 @@ body, html {
   --color-dark-primary: #c7475f;
   --color-dark-primary-contrast: var(--color-white);
   --color-dark-info: #457b92;
+  --color-dark-info-divider: #457b9251;
   --color-dark-info-contrast: var(--color-white);
   --color-dark-success: #418400;
   --color-dark-success-contrast: var(--color-white);

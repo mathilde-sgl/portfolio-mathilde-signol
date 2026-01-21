@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import React, { useReducer } from "react";
-import Icon from "./icon";
+import Icon, { type IconName } from "./icon";
 
 const styles = {
   enableStyle: {
@@ -34,8 +34,8 @@ interface TextButtonProps {
   text: string;
   type?: "flat" | "outline" | "basic";
   size?: "small" | "medium" | "large";
-  leadingIcon?: string;
-  trailingIcon?: string;
+  leadingIcon?: IconName;
+  trailingIcon?: IconName;
   stateProp?: "enabled" | "hovered";
   onClick?: () => void;
 }

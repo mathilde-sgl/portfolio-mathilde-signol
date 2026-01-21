@@ -1,5 +1,5 @@
-import React from 'react';
-import '../app/globals.css';
+//src/pages/index.tsx
+
 import TopBar from '../components/topBar';
 import ButtonsList from '@/components/buttons-list';
 import { useRouter } from 'next/router';
@@ -47,6 +47,7 @@ export default function Homepage() {
           {/* Right Part - Intro Text */}
           <div className='flex flex-col gap-[var(--spacing-xl)] items-end'>
             <div className="space-y-[var(--spacing-sm)]">
+              {/* Accroche */}
               <p className="text1">
                 Vous souhaitez faire une <span className="text1Bold">refonte UX & UI</span> de bout en bout de votre produit ? <br />
                 Vous cherchez à créer, mettre en place ou gérer un <span className="text1Bold">Design System</span> ? <br />
@@ -55,9 +56,10 @@ export default function Homepage() {
 
               <p className='h3 pt-[var(--spacing-l)]'> Je vous accompagne ! </p>
 
-              <div className='flex flew-row items-center gap-[var(--spacing-sm)]'>
-                <div style={{width: "var(--dimension-m)", height: "var(--dimension-m)", borderRadius: "50%", backgroundColor: "var(--color-dark-success)",}}/>
-                <p className='text1 !text-[var(--color-dark-success)]'> Disponible </p>
+              {/* Disponibilité */}
+              <div className='inline-flex flew-row items-center gap-[var(--spacing-sm)] border border-[var(--color-dark-info-divider)] py-[6px] px-[var(--spacing-sm)] rounded-[var(--radius-xs)]'>
+                <div style={{width: "var(--dimension-sm)", height: "var(--dimension-sm)", borderRadius: "50%", backgroundColor: "var(--color-dark-info)",}}/>
+                <p className='text1'> Disponible S2 2026 </p>
               </div>
 
             </div>
@@ -160,7 +162,7 @@ export default function Homepage() {
           <div className='flex justify-center'>    
             <ButtonsList
               size="large"
-              secondaryAction={{text: "Me contacter", onClick: () => {document.querySelector("#footer")?.scrollIntoView({ behavior: "smooth"});}, leadingIcon: "call",}}             
+              secondaryAction={{text: "Me contacter", onClick: () => {document.querySelector("#footer")?.scrollIntoView({ behavior: "smooth"});}, leadingIcon: "mail",}}             
             />        
          </div>
         </section>

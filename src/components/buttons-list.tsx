@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Icon from "./icon";
 import TextButton from "./text-button";
+import type { IconName } from "./icon";
 
 const styles = {
   gap: {
@@ -17,9 +17,9 @@ const styles = {
 
 interface ListProps {
   size? : "large" | "medium" | "small"
-  primaryAction?: { text: string; onClick: () => void; leadingIcon?: string; trailingIcon?: string };
-  secondaryAction?: { text: string; onClick: () => void; leadingIcon?: string; trailingIcon?: string };
-  tertiaryAction?: { text: string; onClick: () => void; leadingIcon?: string; trailingIcon?: string };
+  primaryAction?: { text: string; onClick: () => void; leadingIcon?: IconName; trailingIcon?: IconName };
+  secondaryAction?: { text: string; onClick: () => void; leadingIcon?: IconName; trailingIcon?: IconName };
+  tertiaryAction?: { text: string; onClick: () => void; leadingIcon?: IconName; trailingIcon?: IconName };
 }
 
 const ButtonsList: React.FC<ListProps> = ({size="medium", primaryAction, secondaryAction, tertiaryAction }) => {

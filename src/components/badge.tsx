@@ -1,5 +1,5 @@
 import React from "react";
-import Icon from "./icon";
+import Icon, { type IconName } from "./icon";
 
 const styles = {
   size: {
@@ -22,7 +22,7 @@ const styles = {
 interface BadgeProps {
   text: string;
   size?: "small" | "medium" | "large";
-  leadingIcon?: string;
+  leadingIcon?: IconName;
 }
 
 interface BadgesProps {

@@ -1,5 +1,7 @@
+//src/pages/expertises.js
+
 import React from 'react';
-import '../app/globals.css';
+//import '../app/globals.css';
 import TopBar from '../components/topBar';
 import Badges from '../components/badge';
 import IllustrationTexts from '../components/illustration-text';
@@ -65,40 +67,40 @@ const digitalBadgesData = [
   ];
 
   const productToolsData = [
-    { leadingIllustration: "/images/logoToolFigma.png", text: "Figma", size: "medium"},
-    { leadingIllustration: "/images/logoToolSketch.png", text: "Sketch", size: "medium"},
-    { leadingIllustration: "/images/logoToolAdobeXd.png", text: "Adobe XD", size: "medium"},
-    { leadingIllustration: "/images/logoToolAdobeIllustrator.png", text: "Adobe Illustrator", size: "medium"},
-    { leadingIllustration: "/images/logoToolAdobePhotoshop.png", text: "Adobe Photoshop", size: "medium"},
-    { leadingIllustration: "/images/logoToolAdobeIndesign.png", text: "Adobe Indesign", size: "medium"},
-    { leadingIllustration: "/images/logoToolInvision.png", text: "Invision", size: "medium"},
-    { leadingIllustration: "/images/logoToolZeplin.png", text: "Zeplin", size: "medium"},
-    { leadingIllustration: "/images/logoToolProcreate.png", text: "Procreate", size: "medium"},
+    { leadingIllustration: {type: "image", src: "/images/logoToolFigma.png"}, text: "Figma", size: "medium"},
+    { leadingIllustration: {type: "image", src: "/images/logoToolSketch.png"}, text: "Sketch", size: "medium"},
+    { leadingIllustration: {type: "image", src: "/images/logoToolAdobeXd.png"}, text: "Adobe XD", size: "medium"},
+    { leadingIllustration: {type: "image", src: "/images/logoToolAdobeIllustrator.png"}, text: "Adobe Illustrator", size: "medium"},
+    { leadingIllustration: {type: "image", src: "/images/logoToolAdobePhotoshop.png"}, text: "Adobe Photoshop", size: "medium"},
+    { leadingIllustration: {type: "image", src: "/images/logoToolAdobeIndesign.png"}, text: "Adobe Indesign", size: "medium"},
+    { leadingIllustration: {type: "image", src: "/images/logoToolInvision.png"}, text: "Invision", size: "medium"},
+    { leadingIllustration: {type: "image", src: "/images/logoToolZeplin.png"}, text: "Zeplin", size: "medium"},
+    { leadingIllustration: {type: "image", src: "/images/logoToolProcreate.png"}, text: "Procreate", size: "medium"},
   ];
 
   const cocreationToolsData = [
-    { leadingIllustration: "/images/logoToolFigma.png", text: "Figjam", size: "medium"},
-    { leadingIllustration: "/images/logoToolMetroRetro.png", text: "Metro Retro", size: "medium"},
-    { leadingIllustration: "/images/logoToolKlaxoon.png", text: "Klaxoon", size: "medium"},
-    { leadingIllustration: "/images/logoToolWhimsical.png", text: "Whimsical", size: "medium"},
-    { leadingIllustration: "/images/logoToolMiro.png", text: "Miro", size: "medium"},
+    { leadingIllustration: {type: "image", src: "/images/logoToolFigma.png"}, text: "Figjam", size: "medium"},
+    { leadingIllustration: {type: "image", src: "/images/logoToolMetroRetro.png"}, text: "Metro Retro", size: "medium"},
+    { leadingIllustration: {type: "image", src: "/images/logoToolKlaxoon.png"}, text: "Klaxoon", size: "medium"},
+    { leadingIllustration: {type: "image", src: "/images/logoToolWhimsical.png"}, text: "Whimsical", size: "medium"},
+    { leadingIllustration: {type: "image", src: "/images/logoToolMiro.png"}, text: "Miro", size: "medium"},
   ];
 
   const projectToolsData = [
-    { leadingIllustration: "/images/logoToolJira.png", text: "Jira & Confluence", size: "medium"},
-    { leadingIllustration: "/images/logoToolMicrosoftOffice.png", text: "Suite Microsoft", size: "medium"},
-    { leadingIllustration: "/images/logoToolGoogleSuite.png", text: "Suite Google", size: "medium"},
-    { leadingIllustration: "/images/logoToolGitlab.png", text: "Gitlab", size: "medium"},
-    { leadingIllustration: "/images/logoToolTrello.png", text: "Trello", size: "medium"},
-    { leadingIllustration: "/images/logoToolAirtable.png", text: "Airtable", size: "medium"},
+    { leadingIllustration: {type: "image", src: "/images/logoToolJira.png"}, text: "Jira & Confluence", size: "medium"},
+    { leadingIllustration: {type: "image", src: "/images/logoToolMicrosoftOffice.png"}, text: "Suite Microsoft", size: "medium"},
+    { leadingIllustration: {type: "image", src: "/images/logoToolGoogleSuite.png"}, text: "Suite Google", size: "medium"},
+    { leadingIllustration: {type: "image", src: "/images/logoToolGitlab.png"}, text: "Gitlab", size: "medium"},
+    { leadingIllustration: {type: "image", src: "/images/logoToolTrello.png"}, text: "Trello", size: "medium"},
+    { leadingIllustration: {type: "image", src: "/images/logoToolAirtable.png"}, text: "Airtable", size: "medium"},
   ];
 
   const devToolsData = [
-    { leadingIllustration: "/images/logoToolWebflow.png", text: "Webflow", size: "medium"},
-    { leadingIllustration: "/images/logoToolStorybook.png", text: "Storybook", size: "medium"},
-    { leadingIllustration: "/images/logoToolABTasty.png", text: "AB Tasty", size: "medium"},
-    { leadingIllustration: "/images/logoToolGoogleAnalytics.png", text: "Google Analytics", size: "medium"},
-    { leadingIllustration: "/images/logoToolVisualStudioCode.png", text: "Visual Studio Code*", size: "medium"},
+    { leadingIllustration: {type: "image", src: "/images/logoToolWebflow.png"}, text: "Webflow", size: "medium"},
+    { leadingIllustration: {type: "image", src: "/images/logoToolStorybook.png"}, text: "Storybook", size: "medium"},
+    { leadingIllustration: {type: "image", src: "/images/logoToolABTasty.png"}, text: "AB Tasty", size: "medium"},
+    { leadingIllustration: {type: "image", src: "/images/logoToolGoogleAnalytics.png"}, text: "Google Analytics", size: "medium"},
+    { leadingIllustration: {type: "image", src: "/images/logoToolVisualStudioCode.png"}, text: "Visual Studio Code*", size: "medium"},
   ];
 
 export default function Experiences() {

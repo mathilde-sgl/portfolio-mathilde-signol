@@ -1,17 +1,18 @@
 //src/components/drawer.tsx
 
 import React from "react";
+import Link from "next/link";
 import NavItem from "./nav-item"; 
 import TextButton from "./text-button";
-import { useRouter } from 'next/router';
+import type { IconName } from "./icon";
 
 interface DrawerProps {
   isOpen: boolean; 
   onClose: () => void; 
   title: string; 
-  navItems: { label: string; size?:"large"; href: string; leadingIcon?: string; trailingIcon?: string }[];
-  primaryAction?: { text: string; onClick: () => void; leadingIcon?: string }; 
-  closeAction?: { text: string; onClick: () => void; leadingIcon?: string }; 
+  navItems: { label: string; size?:"large"; href: string; leadingIcon?: IconName; trailingIcon?: IconName }[];
+  primaryAction?: { text: string; onClick: () => void; leadingIcon?: IconName }; 
+  closeAction?: { text: string; onClick: () => void; leadingIcon?: IconName }; 
 }
 
 const Drawer: React.FC<DrawerProps> = ({
@@ -22,7 +23,6 @@ const Drawer: React.FC<DrawerProps> = ({
     primaryAction,
     closeAction,
   }) => {
-    const router = useRouter();
   
     return (
       <>
@@ -47,26 +47,17 @@ const Drawer: React.FC<DrawerProps> = ({
           {/* Liste de navigation */}
           <div className="mt-6 px-6">
             <ul className="flex flex-col gap-4">
-              {navItems.map((item, index) => (
-                <NavItem
+            {navItems.map((item, index) => (
+              <NavItem
                 key={index}
                 text={item.label}
                 leadingIcon={item.leadingIcon}
                 trailingIcon={item.trailingIcon}
                 size={item.size || "large"}
-                onClick={async () => {
-                  try {
-                    console.log("Navigating to:", item.href);
-                    await router.push(item.href); // Navigue vers la route
-                    onClose(); // Ferme le drawer après navigation
-                    console.log("Navigation complete");
-                  } catch (error) {
-                    console.error("Navigation error:", error);
-                  }
-                }}
+                href={item.href}
+                onClick={onClose} // ferme le drawer
               />
-              
-              ))}
+            ))}
             </ul>
           </div>
   

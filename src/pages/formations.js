@@ -1,5 +1,6 @@
+//src/pages/formations.js
+
 import React from 'react';
-import '../app/globals.css';
 import TopBar from '../components/topBar';
 import BottomBar from '../components/bottomBar';
 import { useRouter } from 'next/router';

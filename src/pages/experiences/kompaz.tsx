@@ -39,7 +39,7 @@ export default function ExperienceKompaz() {
             <Badges badges={[{text: "UX Design"}, {text: "UI Design"}, {text: "Design System"}]}></Badges>
             <p className='text1 max-w-[560px] pb-[var(--spacing-sm)]'>
             Refonte UX/UI et industrialisation de l’outil de management des emplois et compétences 
-            des centrales nucléaires françaises (23 000 utilisateurs potentiels) <br />
+            des centrales nucléaires françaises (23 000 utilisateurs potentiels). <br />
             </p>
             <img src="/images/kompaz-intro.png" alt="maquettes montrant l'interface graphique"></img>
         </section>

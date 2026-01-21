@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import Icon from "./icon";
+import Icon, { type IconName } from "./icon";
 
 // Interface pour chaque onglet
 interface TabItem {
   label: string;
   content?: React.ReactNode;
-  leadingIcon?: string;
+  leadingIcon?: IconName;
   targetPage?: string; // Permet de spécifier une route ou un changement de page
 }
 
