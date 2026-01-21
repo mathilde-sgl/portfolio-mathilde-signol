@@ -120,10 +120,10 @@ body, html {
   --typography-text2-font-size: 16px;
   --typography-text3-font-size: 12px;
   --typography-title-n1-font-size: 4rem;
-  --typography-title-n2-font-size: 3.2rem;
-  --typography-title-n3-font-size: 2.4rem;
-  --typography-title-n4-font-size: 1.8rem;
-  --typography-title-n5-font-size: 1.5rem;
+  --typography-title-n2-font-size: 2.6rem;
+  --typography-title-n3-font-size: 2rem;
+  --typography-title-n4-font-size: 1.6rem;
+  --typography-title-n5-font-size: 1.4rem;
 
   /* Radius */
   --radius-none: 0px;
