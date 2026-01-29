@@ -36,7 +36,7 @@ export default function ExperienceKompaz() {
               <div style={{width: "var(--dimension-3xs)", height: "var(--dimension-sm)", borderRadius: "var(--radius-2xs)", backgroundColor: "var(--color-divider)",}}/>
               <p className='text2'>2025-2026</p>
             </div>
-            <Badges badges={[{text: "UX Design"}, {text: "UI Design"}, {text: "Design System"}]}></Badges>
+            <Badges badges={[{text: "UX Design"}, {text: "UI Design"}, {text: "Design System"}, {text: "Accessibilité numérique"}, {text: "Branding"}]}></Badges>
             <p className='text1 max-w-[560px] pb-[var(--spacing-sm)]'>
             Refonte UX/UI et industrialisation de l’outil de management des emplois et compétences 
             des centrales nucléaires françaises (23 000 utilisateurs potentiels). <br />
@@ -48,13 +48,13 @@ export default function ExperienceKompaz() {
         <section id="presentation" className={sectionProps}>
             <h2 className='h3 !text-[var(--color-symbol-primary)]'>Contexte</h2>
             <p className='text1 max-w-[720px] pb-[var(--spacing-sm)]'>
-            Cet acteur de l'énergie souhaite répondre à un besoin opérationnel des managers sur le terrain : 
+            Cet acteur de l'énergie souhaite répondre à un besoin opérationnel des managers : 
             les aider à gagner en performance sur le management des compétences de leurs équipes.
             </p>
             <h2 className='h3 !text-[var(--color-symbol-primary)]'>Enjeux</h2>
             <p className='text1 max-w-[720px] pb-[var(--spacing-sm)]'>
-            Offrir un outil intégré de management des compétences et des emplois pour les managers et les acteurs qui les appuient 
-            couvrant les besoins de plusieurs départements avec chacun leur propre organisation et des différents niveaux de l'entreprise.
+            Offrir un outil personnalisé, adaptatif et intégré aux managers et aux acteurs qui les appuient 
+            afin de les aider dans le pilotage des compétences et des emplois de leurs équipes.
             </p>
         </section>
 
