@@ -4,6 +4,8 @@ import { useRouter } from 'next/router';
 import Badges from '@/components/badge';
 import ButtonsList from '@/components/buttons-list';
 import BottomBar from '@/components/bottomBar';
+import FadeIn from '@/components/fade-in';
+import KeyNumbers from '@/components/key-numbers';
 import Head from 'next/head';
 
 const sectionProps = "w-full space-y-[var(--spacing-ml)] pb-[var(--spacing-xl)] sm:pb-[var(--spacing-2xl)]"
@@ -23,13 +25,16 @@ export default function Page() {
 
       {/* MAIN CONTENT */}
       <div className="custom-container pt-[var(--spacing-2xl)]">
-        
+
         {/* TITLE */}
+        <FadeIn>
         <section id="title" className='pb-[var(--spacing-xl)]'>
             <h1 className="h1">Welcome Studio</h1>
         </section>
+        </FadeIn>
 
         {/* INTRODUCTION */}
+        <FadeIn>
         <section id="introduction" className={sectionProps}>
             <div className='flex flex-row items-center gap-[var(--spacing-l)]'>
               <p className='text2'>Prototype Figma ・ B2E</p>
@@ -42,8 +47,10 @@ export default function Page() {
             </p>
             <img src="/images/welcomestudio-intro.png" alt="maquettes montrant l'interface graphique"></img>
         </section>
+        </FadeIn>
 
         {/* PRÉSENTATION */}
+        <FadeIn>
         <section id="presentation" className={sectionProps}>
             <h2 className='h3 !text-[var(--color-symbol-primary)]'>Contexte</h2>
             <p className='text1 max-w-[720px] pb-[var(--spacing-sm)]'>
@@ -55,14 +62,25 @@ export default function Page() {
               <span> Faciliter l'accompagnement des consultants qui ont envie de rejoindre le Studio mc2i.</span>
             </p>
         </section>
+        </FadeIn>
+
+        {/* CHIFFRES CLÉS */}
+        <KeyNumbers numbers={[
+          { number: "03", label: "nouveaux arrivants par mois" },
+          { number: "01", label: "prototype Figma réalisé" },
+          { number: "20", label: "utilisateurs du prototype" },
+        ]} />
 
         {/* PARCOURS UTILISATEURS */}
+        <FadeIn>
         <section id="userflow" className={sectionProps}>
             <h2 className='h2'>Parcours utilisateurs</h2>
             <img src="/images/welcomestudio-userflow.png" alt="Parcours utilisateur (complexe) du Welcome Studio"></img>
         </section>
+        </FadeIn>
 
         {/* PROTOTYPE */}
+        <FadeIn>
         <section id="prorotype" className={sectionProps}>
             <h2 className='h2'>Prototype</h2>
             <div className='flex justify-center'>
@@ -71,17 +89,20 @@ export default function Page() {
               </video>
             </div>
         </section>
+        </FadeIn>
 
+        <FadeIn>
         <div id="main-actions" className='flex flex-col-reverse gap-[var(--spacing-ml)] sm:flex-row justify-between pt-[var(--spacing-xl)] pb-[var(--spacing-4xl)]'>
             <ButtonsList
               size="large"
-              tertiaryAction={{text: "Projet précédent", onClick: () => router.push('/experiences/moncompteformation'), leadingIcon: "arrow-back",}}             
-            /> 
+              tertiaryAction={{text: "Projet précédent", onClick: () => router.push('/experiences/moncompteformation'), leadingIcon: "arrow-back",}}
+            />
             <ButtonsList
               size="large"
-              secondaryAction={{text: "Projet suivant", onClick: () => router.push('/experiences/certificateurs'), leadingIcon: "arrow-next",}}             
-            />        
+              secondaryAction={{text: "Projet suivant", onClick: () => router.push('/experiences/certificateurs'), leadingIcon: "arrow-next",}}
+            />
         </div>
+        </FadeIn>
       </div>
       <BottomBar></BottomBar>
     </div>

@@ -1,0 +1,4 @@
+‣ Ne modifie pas le code toi-même, mais liste moi ce que je dois modifier
+‣ Explique moi ce que tu me proposes, comme si je ne savais pas coder.
+‣ Tu dois toujours penser à la scalabilité de la solution que tu proposes (Design System...)
+‣ Tout ce que tu me proposes doit respecter le RGAA : https://accessibilite.numerique.gouv.fr

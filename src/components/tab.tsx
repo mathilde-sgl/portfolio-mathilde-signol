@@ -50,8 +50,8 @@ const Tab: React.FC<TabProps> = ({
           // Classes dynamiques pour le bouton principal
           const buttonClasses = `group flex items-center gap-[var(--spacing-xs)] py-[var(--spacing-xs)] px-[var(--spacing-l)] border-b-2 ${
             isActive
-              ? "border-[var(--color-primary)] text-[var(--color-primary)] font-bold hover:bg-[var(--color-primary)] hover:rounded-t-[10px] hover:text-[var(--color-primary-contrast)]"
-              : "border-transparent text-[var(--color-black)] hover:bg-[var(--color-primary)] hover:rounded-t-[10px] hover:text-[var(--color-primary-contrast)]"
+              ? "border-[var(--color-primary)] text-[var(--color-primary)] font-bold hover:bg-[var(--color-primary)] hover:rounded-[10px] hover:text-[var(--color-primary-contrast)]"
+              : "border-transparent text-[var(--color-black)] hover:bg-[var(--color-primary)] hover:rounded-[10px] hover:text-[var(--color-primary-contrast)]"
           }`;
 
           // Classes dynamiques pour l'icône
@@ -60,8 +60,8 @@ const Tab: React.FC<TabProps> = ({
           }`;
 
           // Classes dynamiques pour le texte
-          const textClasses = `group-hover:text-[var(--color-primary-contrast)] ${
-            isActive ? "text-[var(--color-primary)]" : "text-[var(--color-black)]"
+          const textClasses = `text2 group-hover:!text-[var(--color-primary-contrast)] ${
+            isActive ? "!text-[var(--color-primary)]" : "!text-[var(--color-black)]"
           }`;
 
           return (

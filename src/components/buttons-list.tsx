@@ -17,9 +17,9 @@ const styles = {
 
 interface ListProps {
   size? : "large" | "medium" | "small"
-  primaryAction?: { text: string; onClick: () => void; leadingIcon?: IconName; trailingIcon?: IconName };
-  secondaryAction?: { text: string; onClick: () => void; leadingIcon?: IconName; trailingIcon?: IconName };
-  tertiaryAction?: { text: string; onClick: () => void; leadingIcon?: IconName; trailingIcon?: IconName };
+  primaryAction?: { text: string; onClick: () => void; leadingIcon?: IconName; trailingIcon?: IconName; ariaLabel?: string };
+  secondaryAction?: { text: string; onClick: () => void; leadingIcon?: IconName; trailingIcon?: IconName; ariaLabel?: string };
+  tertiaryAction?: { text: string; onClick: () => void; leadingIcon?: IconName; trailingIcon?: IconName; ariaLabel?: string };
 }
 
 const ButtonsList: React.FC<ListProps> = ({size="medium", primaryAction, secondaryAction, tertiaryAction }) => {
@@ -32,6 +32,7 @@ const ButtonsList: React.FC<ListProps> = ({size="medium", primaryAction, seconda
         size={size}
         leadingIcon={tertiaryAction?.leadingIcon}
         onClick={tertiaryAction?.onClick}
+        ariaLabel={tertiaryAction?.ariaLabel}
         />
       )}
       {secondaryAction && (
@@ -41,6 +42,7 @@ const ButtonsList: React.FC<ListProps> = ({size="medium", primaryAction, seconda
           size={size} 
           leadingIcon={secondaryAction.leadingIcon}
           onClick={secondaryAction.onClick}
+          ariaLabel={tertiaryAction?.ariaLabel}
         />
       )}
       {primaryAction && (
@@ -50,6 +52,7 @@ const ButtonsList: React.FC<ListProps> = ({size="medium", primaryAction, seconda
           size={size}
           leadingIcon={primaryAction.leadingIcon}
           onClick={primaryAction.onClick}
+          ariaLabel={tertiaryAction?.ariaLabel}
         />
       )}
     </div>

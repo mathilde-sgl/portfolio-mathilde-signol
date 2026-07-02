@@ -31,10 +31,10 @@ interface BadgesProps {
 
 const Badges: React.FC<BadgesProps> = ({ badges }) => {
   return (
-    <div className="flex flex-wrap gap-4 w-full border-d border-[var(--color-divider)]">
+    <div className="flex flex-wrap gap-4 w-full border-d border-[var(--color-divider)])]">
       {badges.map((badge, index) => {
         const badgeClasses = `
-          inline-flex items-center justify-center transition ease-in-out duration-200 border border-b border-[var(--color-divider)]
+          inline-flex items-center justify-center transition ease-in-out duration-200 bg-[var(--color-background)] border border-b border-[var(--color-divider)]
           ${styles.size[badge.size || "medium"]} ${styles.iconSpacing[badge.size || "medium"]} whitespace-nowrap
         `;
 

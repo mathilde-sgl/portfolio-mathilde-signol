@@ -5,9 +5,12 @@ import Button from './text-button';
 import Link from 'next/link';
 import Drawer from "./drawer";
 import Icon, { type IconName } from "./icon";
+import { useRouter } from 'next/router';
+import Tab from "./tab";
 
 export const TopBar = () => {
     const [isDrawerOpen, setDrawerOpen] = useState(false);
+    const router = useRouter();
 
     const navItems = [
         { label: "Accueil", href: "/", leadingIcon: "home", trailingIcon: "arrow-next"},
@@ -38,8 +41,28 @@ export const TopBar = () => {
                 </Link>
             </div>
 
-            {/* Bouton Menu pour écrans en dessous de 600px */}
-            <div>
+            {/* Navigation bureau : visible à partir de md */}
+            <nav className="hidden md:flex items-center gap-[var(--spacing-l)]" aria-label="Navigation principale">
+                <Tab
+                    tabs={navItems.map((item) => ({
+                        label: item.label,
+                        targetPage: item.href,
+                    }))}
+                    defaultActiveIndex={navItems.findIndex((item) => item.href === router.pathname)}
+                    onPageChange={(targetPage) => router.push(targetPage)}
+                />
+                <div className="shrink-0">
+                    <Button
+                        text="Me contacter"
+                        type="flat"
+                        leadingIcon="mail"
+                        onClick={() => router.push('/#footer')}
+                    />
+                </div>
+            </nav>
+
+            {/* Bouton Menu pour écrans en dessous de md */}
+            <div className="md:hidden">
                 <Button
                     text={isDrawerOpen ? 'Fermer' : 'Menu'}
                     type="basic"

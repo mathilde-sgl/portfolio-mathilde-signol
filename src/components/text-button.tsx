@@ -14,9 +14,9 @@ const styles = {
     large: "py-[var(--spacing-xs)] px-[var(--spacing-sm)] text1 rounded-[calc(var(--radius-xs)+2px)]",
   },
   hoverStyle: {
-    flat: "hover:bg-[var(--color-white)] hover:shadow-[0_0_0_2px_var(--color-primary)]",
-    outline: "hover:shadow-[0_0_0_2px_var(--color-black)]",
-    basic: "hover:shadow-[0_0_0_2px_var(--color-black)]",
+    flat: "hover:bg-[var(--color-white)] hover:border-[var(--color-primary)] hover:outline hover:outline-2 hover:outline-[var(--color-primary)]",
+    outline: "hover:outline hover:outline-2 hover:outline-[var(--color-black)]",
+    basic: "hover:border-[var(--color-black)] hover:outline hover:outline-2 hover:outline-[var(--color-black)]",
   },
   iconSpacing: {
     small: "gap-[var(--spacing-3xs)]",
@@ -38,6 +38,7 @@ interface TextButtonProps {
   trailingIcon?: IconName;
   stateProp?: "enabled" | "hovered";
   onClick?: () => void;
+  ariaLabel?: string;
 }
 
 const TextButton: React.FC<TextButtonProps> = ({
@@ -48,6 +49,7 @@ const TextButton: React.FC<TextButtonProps> = ({
   trailingIcon,
   stateProp = "enabled",
   onClick,
+  ariaLabel,
 }) => {
   const [isHovered, setHovered] = useReducer((state) => !state, stateProp === "hovered");
 
@@ -69,6 +71,7 @@ const TextButton: React.FC<TextButtonProps> = ({
     <button
       className={buttonClasses}
       style={{ color: appliedTextColor }} // Apply text color to the entire button
+      aria-label={ariaLabel}
       onMouseEnter={setHovered}
       onMouseLeave={setHovered}
       onClick={onClick}

@@ -4,6 +4,8 @@ import { useRouter } from 'next/router';
 import Badges from '@/components/badge';
 import ButtonsList from '@/components/buttons-list';
 import BottomBar from '@/components/bottomBar';
+import FadeIn from '@/components/fade-in';
+import KeyNumbers from '@/components/key-numbers';
 import Head from 'next/head';
 
 const sectionProps = "w-full space-y-[var(--spacing-ml)] pb-[var(--spacing-xl)] sm:pb-[var(--spacing-2xl)]"
@@ -23,15 +25,18 @@ export default function Imagine() {
 
       {/* MAIN CONTENT */}
       <div className="custom-container pt-[var(--spacing-2xl)]">
-        
+
         {/* TITLE */}
+        <FadeIn>
         <section id="title" className='pb-[var(--spacing-xl)]'>
             <h1 className="h1">Imagine</h1>
         </section>
+        </FadeIn>
 
         {/* INTRODUCTION */}
+        <FadeIn>
         <section id="introduction" className={sectionProps}>
-           <div className='flex flex-row items-center gap-[var(--spacing-l)]'> 
+           <div className='flex flex-row items-center gap-[var(--spacing-l)]'>
               <p className='text2'>Agence de Design</p>
               <div style={{width: "var(--dimension-3xs)", height: "var(--dimension-sm)", borderRadius: "var(--radius-2xs)", backgroundColor: "var(--color-divider)",}}/>
               <span className='text2'>2020-2024</span>
@@ -42,8 +47,10 @@ export default function Imagine() {
             </p>
             <img src="/images/imagine-intro.png" alt="maquettes montrant l'interface graphique"></img>
         </section>
+        </FadeIn>
 
         {/* PRÉSENTATION */}
+        <FadeIn>
         <section id="presentation" className={sectionProps}>
             <h2 className='h3 !text-[var(--color-symbol-primary)]'>Contexte</h2>
             <p className='text1 max-w-[720px] pb-[var(--spacing-sm)]'>
@@ -56,30 +63,43 @@ export default function Imagine() {
               <span> → Accompagner de designers Junior dans leur montée en compétences. </span>
             </p>
         </section>
+        </FadeIn>
+
+        {/* CHIFFRES CLÉS */}
+        <KeyNumbers numbers={[
+          { number: "10", label: "designers accompagnés par an" },
+          { number: "10", label: "entretiens de recrutement par an" },
+        ]} />
 
         {/* LOGOS */}
+        <FadeIn>
         <section id="logos" className={sectionProps}>
             <h2 className='h2'>Logos</h2>
             <img src="/images/imagine-logos.png" alt="maquettes de la page d'accueil, en version mobile & desktop"></img>
         </section>
+        </FadeIn>
 
         {/* VISUELS */}
+        <FadeIn>
         <section id="visuels" className={sectionProps}>
             <h2 className='h2'>Visuels</h2>
             <img src="/images/imagine-visuels1.png" alt="photos retravaillées lot 1" className='pb-[var(--spacing-xl)]'></img>
             <img src="/images/imagine-visuels2.png" alt="photos retravaillées lot 2"></img>
         </section>
+        </FadeIn>
 
+        <FadeIn>
         <div id="main-actions" className='flex flex-col-reverse gap-[var(--spacing-ml)] sm:flex-row justify-between pt-[var(--spacing-xl)] pb-[var(--spacing-4xl)]'>
             <ButtonsList
               size="large"
-              tertiaryAction={{text: "Projet précédent", onClick: () => router.push('/experiences/certificateurs'), leadingIcon: "arrow-back",}}             
-            /> 
+              tertiaryAction={{text: "Projet précédent", onClick: () => router.push('/experiences/certificateurs'), leadingIcon: "arrow-back",}}
+            />
             <ButtonsList
               size="large"
-              secondaryAction={{text: "Projet suivant", onClick: () => router.push('/experiences/kompaz'), leadingIcon: "arrow-next",}}             
-            />        
+              secondaryAction={{text: "Projet suivant", onClick: () => router.push('/experiences/kompaz'), leadingIcon: "arrow-next",}}
+            />
         </div>
+        </FadeIn>
       </div>
       <BottomBar></BottomBar>
     </div>

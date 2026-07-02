@@ -8,12 +8,14 @@ import IllustrationTexts from '../components/illustration-text';
 import { useRouter } from 'next/router';
 import BottomBar from '../components/bottomBar';
 import Head from 'next/head';
+import { useState, useEffect, useRef } from 'react';
 
-const cardProps = "flex flex-col" //bg-[var(--color-card)] rounded-[var(--radius-ml)] px-[var(--spacing-ml)] pb-[var(--spacing-ml)] sm:pt-[var(--spacing-xs)] sm:px-[var(--spacing-l)] sm:pb-[var(--spacing-l)] h-full"
+const cardProps = "flex flex-col gap-[var(--spacing-l)] bg-[var(--color-card)] border border-[var(--color-divider)] rounded-[var(--radius-ml)] px-[var(--spacing-ml)] pb-[var(--spacing-ml)] pt-[var(--spacing-sm)] sm:px-[var(--spacing-l)] sm:py-[var(--spacing-l)] sm:pt-[var(--spacing-l)] h-full"
 
-const digitalBadgesData = [
+const productBadgesData = [
     { text: "Product Management", size: "medium",}, 
     { text: "Analytique & Data", size: "medium",},
+    { text: "Vision produit", size: "medium",},
     { text: "Dev", size: "medium",},
     { text: "Web", size: "medium",},
     { text: "App", size: "medium",},
@@ -23,7 +25,7 @@ const digitalBadgesData = [
     { text: "B2B", size: "medium",},
   ];
   
-  const productBadgesData = [
+  const designBadgesData = [
     { text: "UX Design", size: "medium",},
     { text: "UI Design", size: "medium",},
     { text: "Design Thinking", size: "medium",},
@@ -33,6 +35,7 @@ const digitalBadgesData = [
     { text: "Graphisme", size: "medium",},
     { text: "Accessibilité numérique", size: "medium",},
     { text: "Facilitation graphique", size: "medium",},
+    { text: "IA", size: "medium",},
   ];
 
   const managementBadgesData = [
@@ -67,7 +70,7 @@ const digitalBadgesData = [
   ];
 
   const productToolsData = [
-    { leadingIllustration: {type: "image", src: "/images/logoToolFigma.png"}, text: "Figma", size: "medium"},
+    { leadingIllustration: {type: "image", src: "/images/logoToolFigma.png"}, text: "Suite Figma", size: "medium"},
     { leadingIllustration: {type: "image", src: "/images/logoToolSketch.png"}, text: "Sketch", size: "medium"},
     { leadingIllustration: {type: "image", src: "/images/logoToolAdobeXd.png"}, text: "Adobe XD", size: "medium"},
     { leadingIllustration: {type: "image", src: "/images/logoToolAdobeIllustrator.png"}, text: "Adobe Illustrator", size: "medium"},
@@ -79,7 +82,6 @@ const digitalBadgesData = [
   ];
 
   const cocreationToolsData = [
-    { leadingIllustration: {type: "image", src: "/images/logoToolFigma.png"}, text: "Figjam", size: "medium"},
     { leadingIllustration: {type: "image", src: "/images/logoToolMetroRetro.png"}, text: "Metro Retro", size: "medium"},
     { leadingIllustration: {type: "image", src: "/images/logoToolKlaxoon.png"}, text: "Klaxoon", size: "medium"},
     { leadingIllustration: {type: "image", src: "/images/logoToolWhimsical.png"}, text: "Whimsical", size: "medium"},
@@ -101,7 +103,54 @@ const digitalBadgesData = [
     { leadingIllustration: {type: "image", src: "/images/logoToolABTasty.png"}, text: "AB Tasty", size: "medium"},
     { leadingIllustration: {type: "image", src: "/images/logoToolGoogleAnalytics.png"}, text: "Google Analytics", size: "medium"},
     { leadingIllustration: {type: "image", src: "/images/logoToolVisualStudioCode.png"}, text: "Visual Studio Code*", size: "medium"},
+    { leadingIllustration: {type: "image", src: "/images/logoClaudeIA.png"}, text: "Claude IA", size: "medium"},
   ];
+
+
+function useInView(threshold = 0.12) {
+  const ref = useRef(null);
+  const [visible, setVisible] = useState(false);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(
+      ([e]) => {
+        if (e.isIntersecting) {
+          setVisible(true);
+          obs.disconnect();
+        }
+      },
+      { threshold },
+    );
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, [threshold]);
+  return { ref, visible };
+}
+
+function FadeIn({
+  children,
+  delay = 0,
+  className = "",
+}) {
+  
+  const { ref, visible } = useInView();
+  return (
+    <div
+      ref={ref}
+      className={className}
+      style={{
+        opacity: visible ? 1 : 0,
+        transform: visible
+          ? "translateY(0)"
+          : "translateY(24px)",
+        transition: `opacity 0.65s ease ${delay}ms, transform 0.65s ease ${delay}ms`,
+      }}
+    >
+      {children}
+    </div>
+  );
+}
 
 export default function Experiences() {
   const router = useRouter();
@@ -116,114 +165,112 @@ export default function Experiences() {
       <TopBar />
 
       {/* MAIN CONTENT */}
-      <div className="custom-container pt-[var(--spacing-xl)] space-y-[var(--spacing-l)]">
+      <div className="custom-container pt-[var(--spacing-2xl)] pb-[var(--spacing-xl)] space-y-[var(--spacing-l)]">
         
         {/* TITLE */}
-        <section id="title"><h1 className="h1">Mes expertises</h1></section>
+        <section id="title"><h1 className="h1">Mes <em className="serif">expertises</em></h1></section>
 
         {/* SECTION 1 : MES COMPÉTENCES */}
-        <section id= "competences">
-            <div className='flex flex-row items-center gap-[var(--spacing-l)]'>
-                {/* <Icon name="competencies" size="var(--dimension-2xl)"></Icon>*/}
+        <section id= "competences" className='pb-[var(--spacing-2xl)]'>
+            <FadeIn>
+            <div className='flex gap-[var(--spacing-l)]'>
                 <h2 className="h2 !text-[--color-primary]">Mes compétences</h2>
             </div>
+            </FadeIn>
 
-            <div className='grid grid-cols-1 md:grid-cols-4 items-start gap-[var(--spacing-2xl)]'>
+            <FadeIn>
+            <div className='grid grid-cols-1 md:grid-cols-2 items-stretch gap-[var(--spacing-2xl)]'>
 
-                {/* PRODUCT & DESIGN */}
-                <div id='product&design' className={cardProps}>
+                {/* DESIGN */}
+                <div id='design'>
                     <div className={cardProps}>
-                    <h3 className='h4'>Design</h3>
+                    <h3 className='text2 uppercase'>Design</h3>
+                    <Badges badges={designBadgesData} />
+                    </div>
+                </div>
+
+                {/* PRODUIT */}
+                <div id='product'>
+                    <div className={cardProps}>
+                    <h3 className='text2 uppercase'>Produit</h3>
                     <Badges badges={productBadgesData} />
                     </div>
                 </div>
 
-                {/* BUSINESS & MANAGEMENT */}
-                <div id='business&management' className={cardProps}>
+                {/* MANAGEMENT */}
+                <div id='management'>
                     <div className={cardProps}>
-                    <h3 className='h4'>Management</h3>
+                    <h3 className='text2 uppercase'>Management</h3>
                     <Badges badges={managementBadgesData} />
                     </div>
                 </div>
 
-                {/* DIGITAL */}
-                <div id='digital' className={cardProps}>
-                    <div className={cardProps}>
-                    <h3 className='h4'>Produit</h3>
-                    <Badges badges={digitalBadgesData} />
-                    </div>
-                </div>
-
                 {/* GESTION DE PROJET */}
-                <div id='projectmanagement' className={cardProps}>
+                <div id='projectmanagement'>
                     <div className={cardProps}>
-                    <h3 className='h4'>Projet</h3>
+                    <h3 className='text2 uppercase'>Projet</h3>
                     <Badges badges={projectBadgesData} />
                     </div>
                 </div>
 
-                {/* SECTEURS */}
-                {/*<div id='business&management' className={cardProps}>
-                    <div className={cardProps}>
-                    <h3 className='h4'>Secteurs</h3>
-                    <Badges badges={sectorBadgesData} />
-                    </div>
-                </div>*/}
-
-                {/* BUSINESS & MANAGEMENT */}
-                {/*<div id='langage' className={cardProps}>
-                    <div className={cardProps}>
-                    <h3 className='h4'>Langues</h3>
-                    <Badges badges={langageBadgesData} />
-                    </div>
-                </div>*/}
             </div>
+            </FadeIn>
 
         </section>
 
         {/* SECTION 2 : MES OUTILS */}
-        <section id= "outils" className='pb-[var(--spacing-4xl)]'>
-            <div className='flex flex-row items-center gap-[var(--spacing-l)] '>
-                {/*<Icon name="tools" size="var(--dimension-2xl)"></Icon>*/}
-                <h2 className="h2 !text-[--color-primary]">Mes outils</h2>
-            </div>
+        <section id= "outils" className='pb-[var(--spacing-2xl)]'>
+            <FadeIn>
+              <div className='flex flex-row items-center gap-[var(--spacing-l)] '>
+                  {/*<Icon name="tools" size="var(--dimension-2xl)"></Icon>*/}
+                  <h2 className="h2 !text-[--color-primary]">Mes outils</h2>
+              </div>
+            </FadeIn>
 
-            <div className='grid grid-cols-1 md:grid-cols-4 items-start gap-[var(--spacing-2xl)]'>
+              <div className='grid grid-cols-1 md:grid-cols-4 items-stretch gap-[var(--spacing-2xl)]'>
 
-                {/* PRODUCT & DESIGN */}
-                <div id='product&design' className={cardProps}>
-                    <div className={cardProps}>
-                    <h3 className='h4'>Design & Produit</h3>
-                    <IllustrationTexts illustrationTexts={productToolsData} />
-                    </div>
-                </div>
+                  {/* PRODUCT & DESIGN */}
+                  <FadeIn delay={0} className="h-full">
+                  <div id='product&design' className='h-full'>
+                      <div className={cardProps}>
+                      <h3 className='text2 uppercase'>Design & Produit</h3>
+                      <IllustrationTexts illustrationTexts={productToolsData} />
+                      </div>
+                  </div>
+                  </FadeIn>
 
-                {/* CO-CRÉATION */}
-                <div id='cocreation' className={cardProps}>
-                    <div className={cardProps}>
-                    <h3 className='h4'>Co-création</h3>
-                    <IllustrationTexts illustrationTexts={cocreationToolsData} />
-                    </div>
-                </div>
+                  {/* CO-CRÉATION */}
+                  <FadeIn delay={100} className="h-full">
+                  <div id='cocreation' className='h-full'>
+                      <div className={cardProps}>
+                      <h3 className='text2 uppercase'>Co-création</h3>
+                      <IllustrationTexts illustrationTexts={cocreationToolsData} />
+                      </div>
+                  </div>
+                  </FadeIn>
 
-                {/* PROJECT MANAGEMENT */}
-                <div id='digital' className={cardProps}>
-                    <div className={cardProps}>
-                    <h3 className='h4'>Gestion de projet</h3>
-                    <IllustrationTexts illustrationTexts={projectToolsData} />
-                    </div>
-                </div>
-                
-                {/* DEV & DATA */}
-                <div id='projectmanagement' className={cardProps}>
-                    <div className={cardProps}>
-                    <h3 className='h4'>Dev & Data</h3>
-                    <IllustrationTexts illustrationTexts={devToolsData} />
-                    <span className='text2 pt-[var(--spacing-ml)]'>*HTML, CSS, React, Tailwind</span>
-                    </div>
-                </div>
-            
-            </div>
+                  {/* PROJECT MANAGEMENT */}
+                  <FadeIn delay={200} className="h-full">
+                  <div id='projectmanagement' className='h-full'>
+                      <div className={cardProps}>
+                      <h3 className='text2 uppercase'>Gestion de projet</h3>
+                      <IllustrationTexts illustrationTexts={projectToolsData} />
+                      </div>
+                  </div>
+                  </FadeIn>
+                  
+                  {/* DEV & DATA */}
+                  <FadeIn delay={300} className="h-full">
+                  <div id='dev&data' className='h-full'>
+                      <div className={cardProps}>
+                      <h3 className='text2 uppercase'>Dev & Data</h3>
+                      <IllustrationTexts illustrationTexts={devToolsData} />
+                      <span className='text2 pt-[var(--spacing-ml)]'>*HTML, CSS, React, Tailwind</span>
+                      </div>
+                  </div>
+                  </FadeIn>
+
+              </div>
 
         </section>
 

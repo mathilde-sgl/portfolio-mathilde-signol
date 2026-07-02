@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400&family=Outfit:wght@300;400;500;600&display=swap');
+
 
 @tailwind base;
 @tailwind components;
@@ -50,9 +52,6 @@ body, html {
 
 
 :root {
-  /* FONT */
-  --font-family: "Nunito", sans-serif;
-
   /* COLORS */
   /* Base colors */
   --color-white: #ffffff;
@@ -81,6 +80,7 @@ body, html {
   --color-blur-primary: #bb1e3a7a;
   --color-shadow: #35292b14;
   --color-card: #f8f8f8;
+  --color-card-blur: color-mix(in srgb, var(--color-card) 64%, transparent);
   --color-background: #fdfdfd;
   --color-overlay: #fdfdfd7a;
   --color-dialog:#fdfdfdea;
@@ -160,11 +160,16 @@ body, html {
   --dimension-3xl: 80px;
   --dimension-4xl: 120px; 
   --dimension-5xl: 160px;
+
+  /* FONT */
+  --font-family: "Outfit", sans-serif;
+  --font-family-text: "Outfit", sans-serif;
+  --font-family-title:"Fraunces", sans-serif;
 }
 
 /* Corps de texte */
 .body {
-  font-family: var(--font-family);
+  font-family: var(--font-family-text);
   color: var(--color-text1);
   background-color: transparent;
   margin: 0;
@@ -174,14 +179,14 @@ body, html {
 
 /* Textes de base en classes */
 .text1 {
-  font-family: var(--font-family);
+  font-family: var(--font-family-text);
   font-size: var(--typography-text1-font-size);
   line-height: 1.5;
   color: var(--color-text1);
 }
 
 .text1Bold {
-  font-family: var(--font-family);
+  font-family: var(--font-family-text);
   font-weight: 700;
   font-size: var(--typography-text1-font-size);
   line-height: 1.5;
@@ -189,14 +194,22 @@ body, html {
 }
 
 .text2 {
-  font-family: var(--font-family);
+  font-family: var(--font-family-text);
+  font-size: var(--typography-text2-font-size);
+  line-height: 1.5;
+  color: var(--color-text2);
+}
+
+.text2Bold {
+  font-family: var(--font-family-text);
+  font-weight: 700;
   font-size: var(--typography-text2-font-size);
   line-height: 1.5;
   color: var(--color-text2);
 }
 
 .text3 {
-  font-family: var(--font-family);
+  font-family: var(--font-family-text);
   font-size: var(--typography-text3-font-size);
   line-height: 1.5;
   color: var(--color-text3);
@@ -204,31 +217,31 @@ body, html {
 
 /* Titres */
 .h1 {
-  font-family: var(--font-family);
+  font-family: var(--font-family-title);
   font-size: var(--typography-title-n1-font-size);
-  font-weight: 500;
-  line-height: 1;
+  font-weight: 300;
+  line-height: 1.2;
   color: var(--color-black);
   padding-top: 4rem;
-  padding-bottom: 1rem;
+  padding-bottom: 0.5rem;
   overflow-wrap: break-word;
   hyphens: auto;
 }
 
 .h2 {
-  font-family: var(--font-family);
+  font-family: var(--font-family-title);
   font-size: var(--typography-title-n2-font-size);
-  font-weight: 500;
+  font-weight: 300;
   line-height: 1.5;
   color: var(--color-black);
-  padding-top: 3.2rem;
+  padding-top: 1.5rem;
   padding-bottom: 1rem;
 }
 
 .h3 {
-  font-family: var(--font-family);
+  font-family: var(--font-family-title);
   font-size: var(--typography-title-n3-font-size);
-  font-weight: 500;
+  font-weight: 400;
   line-height: 1.5;
   color: var(--color-black);
   padding-top: 1.5rem;
@@ -236,9 +249,9 @@ body, html {
 }
 
 .h4 {
-  font-family: var(--font-family);
+  font-family: var(--font-family-title);
   font-size: var(--typography-title-n4-font-size);
-  font-weight: 500;
+  font-weight: 300;
   line-height: 1.5;
   color: var(--color-black);
   padding-top: 0.75rem;
@@ -246,9 +259,9 @@ body, html {
 }
 
 .h5 {
-  font-family: var(--font-family);
+  font-family: var(--font-family-title);
   font-size: var(--typography-title-n5-font-size);
-  font-weight: 500;
+  font-weight: 300;
   line-height: 1.5;
   color: var(--color-black);
   padding-top: 0.5rem;

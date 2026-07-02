@@ -16,6 +16,7 @@ import Linkedin from "@/styles/icons/linkedIn.svg";
 import Mail from "@/styles/icons/mail.svg";
 import Menu from "@/styles/icons/menu.svg";
 import Tools from "@/styles/icons/tools.svg";
+import Copied from "@/styles/icons/copied.svg";
 
 const icons = {
   "arrow-back": ArrowBack,
@@ -33,6 +34,7 @@ const icons = {
   mail: Mail,
   menu: Menu,
   tools: Tools,
+  copied: Copied
 } as const;
 
 export type IconName = keyof typeof icons;
