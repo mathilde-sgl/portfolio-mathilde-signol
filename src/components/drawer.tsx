@@ -3,7 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import NavItem from "./nav-item"; 
-import TextButton from "./text-button";
+import ButtonsList from "./buttons-list";
 import type { IconName } from "./icon";
 
 interface DrawerProps {
@@ -62,24 +62,12 @@ const Drawer: React.FC<DrawerProps> = ({
           </div>
   
           {/* Liste des boutons */}
-          <div className="absolute bottom-6 right-6 gap-4 inline-flex items-center justify-center">
-            <TextButton
-              text={closeAction?.text || "Fermer"} // Par défaut "Fermer"
-              type="basic"
+          <div className="absolute bottom-6 right-6">
+            <ButtonsList
               size="medium"
-              leadingIcon={closeAction?.leadingIcon || "close"} // Par défaut l'icône "close"
-              onClick={onClose}
+              primaryAction={primaryAction}
+              tertiaryAction={{ text: closeAction?.text || "Fermer", leadingIcon: closeAction?.leadingIcon || "close", onClick: onClose }}
             />
-  
-            {primaryAction && (
-              <TextButton
-                text={primaryAction.text}
-                type="flat"
-                size="medium"
-                leadingIcon={primaryAction.leadingIcon}
-                onClick={primaryAction.onClick}
-              />
-            )}
           </div>
         </div>
       </>

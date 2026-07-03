@@ -11,7 +11,7 @@ const styles = {
     medium: "py-[var(--spacing-xs)] px-[var(--spacing-sm)] text2 rounded-[var(--radius-xs)]",
     large: "py-[var(--spacing-xs)] px-[var(--spacing-sm)] text1 rounded-[calc(var(--radius-xs)+2px)]",
   },
-  hoverStyle: "hover:shadow-[0_0_0_2px_var(--color-black)]",
+  hoverStyle: "hover:outline hover:outline-2 hover:outline-[var(--color-black)]",
   iconSpacing: {
     small: "gap-[var(--spacing-2xs)]",
     medium: "gap-[var(--spacing-xs)]",

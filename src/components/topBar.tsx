@@ -77,6 +77,11 @@ export const TopBar = () => {
                 onClose={() => setDrawerOpen(false)}
                 title="Découvrez mon univers"
                 navItems={navItems}
+                primaryAction={{
+                    text: "Me contacter",
+                    leadingIcon: "mail",
+                    onClick: () => { setDrawerOpen(false); router.push('/#contactez-moi'); },
+                }}
             />
         </div>
     );
