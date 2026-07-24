@@ -85,6 +85,14 @@ export default function ExperienceActeurBancaire() {
         </section>
         </FadeIn>
 
+        {/* EXPERIENCE MAP */}
+        <FadeIn>
+        <section id="experiencemap" className={sectionProps}>
+            <h2 className='h2'>Experience Map</h2>
+            <img src="/images/marketplace-experiencemap.png" alt="experience map de la Marketplace avant la refonte, identification de ses points forts et améliorations"></img>
+        </section>
+        </FadeIn>
+
         {/* LOGOS */}
         <FadeIn>
         <section id="logos" className={sectionProps}>
@@ -94,10 +102,16 @@ export default function ExperienceActeurBancaire() {
         </FadeIn>
 
         {/* DESIGN SYSTEM */}
-        {/*<section id="design-system" className={sectionProps}>
+        <section id="design-system" className={sectionProps}>
             <h2 className='h2'>Design System</h2>
-            <img src="/images/mesr-design-system.png" alt="design System de Cofolio"></img>
-        </section>*/}
+            <img src="/images/marketplace-design-system.png" alt="design System de Cofolio"></img>
+        </section>
+
+        {/* USER FLOW */}
+        <section id="user-flow" className={sectionProps}>
+            <h2 className='h2'>User flow</h2>
+            <img src="/images/marketplace-design-system.png" alt="user flow du produit refondu en UX et UI"></img>
+        </section>
 
         {/* MAQUETTES */}
         <FadeIn>

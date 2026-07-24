@@ -129,6 +129,22 @@ export default function ExperienceMonCompteFormation() {
         </section>
         </FadeIn>
 
+        {/* TESTS UTILISATEURS */}
+        <FadeIn>
+        <section id="tests-utilisateurs" className={sectionProps}>
+            <h2 className='h2'>Tests utilisateurs</h2>
+            <img src="/images/cpf-usertests.png" alt="prise de notes de tests utilisateurs" className='pb-[var(--spacing-xl)]'></img>
+        </section>
+        </FadeIn>
+
+        {/* A/B TESTING */}
+        <FadeIn>
+        <section id="ab-testing" className={sectionProps}>
+            <h2 className='h2'>A/B Testing</h2>
+            <img src="/images/cpf-abtesting.png" alt="A/B test réalisé en production pour valider le choix du wording d'un bouton d'action" className='pb-[var(--spacing-xl)]'></img>
+        </section>
+        </FadeIn>
+
         <FadeIn>
         <div id="main-actions" className='flex flex-col-reverse gap-[var(--spacing-ml)] sm:flex-row justify-between pt-[var(--spacing-xl)] pb-[var(--spacing-4xl)]'>
             <ButtonsList
